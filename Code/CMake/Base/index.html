@@ -1,0 +1,870 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="tadylon tech blog" href="http://tadylon.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="tadylon tech blog" href="http://tadylon.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="tadylon tech blog" href="http://tadylon.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://tadylon.github.io/Code/CMake/Base/">
+
+
+<meta name="description" content="# 1. CMake 概述 CMake 是一个项目构建工具，并且是跨平台的。关于项目构建我们所熟知的还有 Makefile（通过 make 命令进行项目的构建），大多是 IDE 软件都集成了 make，比如：VS 的 nmake、linux 下的 GNU make、Qt 的 qmake 等，如果自己动手写 makefile，会发现，makefile 通常依赖于当前的编译平台，而且编写 makefi">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" CMake Base ">
+<meta property="og:url" content="http://tadylon.github.io/Code/CMake/Base/index.html">
+<meta property="og:site_name" content="tadylon tech blog">
+<meta property="og:description" content="# 1. CMake 概述 CMake 是一个项目构建工具，并且是跨平台的。关于项目构建我们所熟知的还有 Makefile（通过 make 命令进行项目的构建），大多是 IDE 软件都集成了 make，比如：VS 的 nmake、linux 下的 GNU make、Qt 的 qmake 等，如果自己动手写 makefile，会发现，makefile 通常依赖于当前的编译平台，而且编写 makefi">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-10T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-10T09:33:12.971Z">
+<meta property="article:author" content="tadylon">
+<meta name="twitter:card" content="summary">
+
+
+  <title>
+ CMake Base  |
+tadylon = tadylon tech blog</title>
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline"> CMake Base 
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>20k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>18 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">tadylon</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="/img/background/background_6.png"></li>
+          <li class="item" data-background-image="/img/background/background_5.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_1.png"></li>
+          <li class="item" data-background-image="/img/background/background_10.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_8.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_13.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://tadylon.github.io/Code/CMake/Base/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar/avatar.png">
+    <meta itemprop="name" content="tadylon">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="tadylon tech blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="1-cmake概述"><a class="markdownIt-Anchor" href="#1-cmake概述">#</a> 1. CMake 概述</h1>
+<p>CMake 是一个项目构建工具，并且是跨平台的。关于项目构建我们所熟知的还有 Makefile（通过 make 命令进行项目的构建），大多是 IDE 软件都集成了 make，比如：VS 的 nmake、linux 下的 GNU make、Qt 的 qmake 等，如果自己动手写 makefile，会发现，makefile 通常依赖于当前的编译平台，而且编写 makefile 的工作量比较大，解决依赖关系时也容易出错。</p>
+<p>而 CMake 恰好能解决上述问题， 其允许开发者指定整个工程的编译流程，在根据编译平台，自动生成本地化的 Makefile 和工程文件，最后用户只需 make 编译即可，所以可以把 CMake 看成一款自动生成 Makefile 的工具，其编译流程如下图：</p>
+<figure class="highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">项目源码</span><br><span class="line"></span><br><span class="line">CmakeLists.txt</span><br><span class="line"></span><br><span class="line">cmake</span><br><span class="line"></span><br><span class="line">makefile</span><br><span class="line"></span><br><span class="line">生成目标文件</span><br></pre></td></tr></table></figure>
+<p>蓝色虚线表示使用 makefile 构建项目的过程<br>
+红色实线表示使用 cmake 构建项目的过程</p>
+<p>介绍完 CMake 的作用之后，再来总结一下它的优点：</p>
+<p>跨平台<br>
+能够管理大型项目<br>
+简化编译构建过程和编译过程<br>
+可扩展：可以为 cmake 编写特定功能的模块，扩充 cmake 功能</p>
+<h1 id="2-cmake的使用"><a class="markdownIt-Anchor" href="#2-cmake的使用">#</a> 2. CMake 的使用</h1>
+<p>CMake 支持大写、小写、混合大小写的命令。如果在编写 CMakeLists.txt 文件时使用的工具有对应的命令提示，那么大小写随缘即可，不要太过在意。</p>
+<h2 id="21-注释"><a class="markdownIt-Anchor" href="#21-注释">#</a> 2.1 注释</h2>
+<h3 id="211-注释行"><a class="markdownIt-Anchor" href="#211-注释行">#</a> 2.1.1 注释行</h3>
+<p>CMake 使用 # 进行行注释，可以放在任何位置。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 这是一个 CMakeLists.txt 文件</span><br><span class="line">cmake_minimum_required(VERSION <span class="number">3.0</span>.<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="212-注释块"><a class="markdownIt-Anchor" href="#212-注释块">#</a> 2.1.2 注释块</h3>
+<p>CMake 使用 #[[]] 形式进行块注释。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#[[ 这是一个 CMakeLists.txt 文件。</span></span><br><span class="line"><span class="comment">这是一个 CMakeLists.txt 文件</span></span><br><span class="line"><span class="comment">这是一个 CMakeLists.txt 文件]]</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>.<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="21-只有源文件"><a class="markdownIt-Anchor" href="#21-只有源文件">#</a> 2.1 只有源文件</h2>
+<h3 id="211-共处一室"><a class="markdownIt-Anchor" href="#211-共处一室">#</a> 2.1.1 共处一室</h3>
+<p>准备工作，为了方便测试，在我本地电脑准备了这么几个测试文件</p>
+<p>add.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;head.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>sub.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;head.h&quot;</span></span></span><br><span class="line"><span class="comment">// 你好</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">subtract</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>mult.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;head.h&quot;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">multiply</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> a*b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>div.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;head.h&quot;</span></span></span><br><span class="line"><span class="type">double</span> <span class="title function_">divide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="type">double</span>)a/b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>head.h</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">ifndef</span> _HEAD_H</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> _HEAD_H</span></span><br><span class="line"><span class="comment">// 加法</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>;</span><br><span class="line"><span class="comment">// 减法</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">subtract</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>;</span><br><span class="line"><span class="comment">// 乘法</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">multiply</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>;</span><br><span class="line"><span class="comment">// 除法</span></span><br><span class="line"><span class="type">double</span> <span class="title function_">divide</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+<p>main.c</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;head.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="type">int</span> a = <span class="number">20</span>;</span><br><span class="line">	<span class="type">int</span> b = <span class="number">12</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a = %d, b = %d\n&quot;</span>, a, b);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a + b = %d\n&quot;</span>, add(a, b));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a - b = %d\n&quot;</span>, subtract(a, b));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a * b = %d\n&quot;</span>, multiply(a, b));</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;a / b = %f\n&quot;</span>, divide(a, b));</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上述文件的目录结构如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ tree</span><br><span class="line">.</span><br><span class="line">├── add.c</span><br><span class="line">├── div.c</span><br><span class="line">├── head.h</span><br><span class="line">├── main.c</span><br><span class="line">├── mult.c</span><br><span class="line">└── sub.c</span><br></pre></td></tr></table></figure>
+<p>添加 CMakeLists.txt 文件</p>
+<p>在上述源文件所在目录下添加一个新文件 CMakeLists.txt，文件内容如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="keyword">add_executable</span>(app add.c div.c main.c mult.c sub.c)</span><br></pre></td></tr></table></figure>
+<p>接下来依次介绍一下在 CMakeLists.txt 文件中添加的三个命令:</p>
+<p>cmake_minimum_required：指定使用的 cmake 的最低版本<br>
+可选，非必须，如果不加可能会有警告</p>
+<p>project：定义工程名称，并可指定工程的版本、工程描述、web 主页地址、支持的语言（默认情况支持所有语言），如果不需要这些都是可以忽略的，只需要指定出工程名字即可。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># PROJECT 指令的语法是：</span></span><br><span class="line"><span class="keyword">project</span>(&lt;<span class="keyword">PROJECT</span>-NAME&gt; [&lt;language-name&gt;...])</span><br><span class="line"><span class="keyword">project</span>(&lt;<span class="keyword">PROJECT</span>-NAME&gt;</span><br><span class="line">	   [VERSION &lt;major&gt;[.&lt;minor&gt;[.&lt;patch&gt;[.&lt;tweak&gt;]]]]</span><br><span class="line">	   [DESCRIPTION &lt;<span class="keyword">project</span>-description-<span class="keyword">string</span>&gt;]</span><br><span class="line">	   [HOMEPAGE_URL &lt;url-<span class="keyword">string</span>&gt;]</span><br><span class="line">	   [LANGUAGES &lt;language-name&gt;...])</span><br></pre></td></tr></table></figure>
+<p>add_executable：定义工程会生成一个可执行程序</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(可执行程序名 源文件名称)</span><br></pre></td></tr></table></figure>
+<p>这里的可执行程序名和 project 中的项目名没有任何关系<br>
+源文件名可以是一个也可以是多个，如有多个可用空格或；间隔</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 样式1</span></span><br><span class="line"><span class="keyword">add_executable</span>(app add.c div.c main.c mult.c sub.c)</span><br><span class="line"><span class="comment"># 样式2</span></span><br><span class="line"><span class="keyword">add_executable</span>(app add.c;div.c;main.c;mult.c;sub.c)</span><br></pre></td></tr></table></figure>
+<p>执行 CMake 命令<br>
+万事俱备只欠东风，将 CMakeLists.txt 文件编辑好之后，就可以执行 cmake 命令了。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># cmake 命令原型</span><br><span class="line">$ cmake CMakeLists.txt文件所在路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ tree</span><br><span class="line">.</span><br><span class="line">├── add.c</span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── div.c</span><br><span class="line">├── head.h</span><br><span class="line">├── main.c</span><br><span class="line">├── mult.c</span><br><span class="line">└── sub.c</span><br><span class="line"></span><br><span class="line">0 directories, 7 files</span><br><span class="line">robin@OS:~/Linux/3Day/calc$ cmake .</span><br></pre></td></tr></table></figure>
+<p>当执行 cmake 命令之后，CMakeLists.txt 中的命令就会被执行，所以一定要注意给 cmake 命令指定路径的时候一定不能出错。<br>
+执行命令之后，看一下源文件所在目录中是否多了一些文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ tree -L 1</span><br><span class="line">.</span><br><span class="line">├── add.c</span><br><span class="line">├── CMakeCache.txt         <span class="comment"># new add file</span></span><br><span class="line">├── CMakeFiles             <span class="comment"># new add dir</span></span><br><span class="line">├── cmake_install.cmake    <span class="comment"># new add file</span></span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── div.c</span><br><span class="line">├── head.h</span><br><span class="line">├── main.c</span><br><span class="line">├── Makefile               <span class="comment"># new add file</span></span><br><span class="line">├── mult.c</span><br><span class="line">└── sub.c</span><br></pre></td></tr></table></figure>
+<p>我们可以看到在对应的目录下生成了一个 makefile 文件，此时再执行 make 命令，就可以对项目进行构建得到所需的可执行程序了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">$ make</span><br><span class="line">Scanning dependencies of target app</span><br><span class="line">[100%] Built target app</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看可执行程序是否已经生成</span></span><br><span class="line">$ tree -L 1</span><br><span class="line">.</span><br><span class="line">├── add.c</span><br><span class="line">├── app					<span class="comment"># 生成的可执行程序</span></span><br><span class="line">├── CMakeCache.txt</span><br><span class="line">├── CMakeFiles</span><br><span class="line">├── cmake_install.cmake</span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── div.c</span><br><span class="line">├── head.h</span><br><span class="line">├── main.c</span><br><span class="line">├── Makefile</span><br><span class="line">├── mult.c</span><br><span class="line">└── sub.c</span><br></pre></td></tr></table></figure>
+<p>最终可执行程序 app 就被编译出来了（这个名字是在 CMakeLists.txt 中指定的）。</p>
+<h3 id="212-vip-包房"><a class="markdownIt-Anchor" href="#212-vip-包房">#</a> 2.1.2 VIP 包房</h3>
+<p>通过上面的例子可以看出，如果在 CMakeLists.txt 文件所在目录执行了 cmake 命令之后就会生成一些目录和文件（包括 makefile 文件），如果再基于 makefile 文件执行 make 命令，程序在编译过程中还会生成一些中间文件和一个可执行文件，这样会导致整个项目目录看起来很混乱，不太容易管理和维护，此时我们就可以把生成的这些与项目源码无关的文件统一放到一个对应的目录里边，比如将这个目录命名为 build:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> build</span><br><span class="line"></span><br><span class="line">$ <span class="built_in">cd</span> build</span><br><span class="line"></span><br><span class="line">$ cmake ..</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>现在 cmake 命令是在 build 目录中执行的，但是 CMakeLists.txt 文件是 build 目录的上一级目录中，所以 cmake 命令后指定的路径为…，即当前目录的上一级目录。</p>
+<p>当命令执行完毕之后，在 build 目录中会生成一个 makefile 文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ tree build -L 1</span><br><span class="line">build</span><br><span class="line">├── CMakeCache.txt</span><br><span class="line">├── CMakeFiles</span><br><span class="line">├── cmake_install.cmake</span><br><span class="line">└── Makefile</span><br><span class="line"></span><br><span class="line">1 directory, 3 files</span><br></pre></td></tr></table></figure>
+<p>这样就可以在 build 目录中执行 make 命令编译项目，生成的相关文件自然也就被存储到 build 目录中了。这样通过 cmake 和 make 生成的所有文件就全部和项目源文件隔离开了，各回各家，各找各妈。</p>
+<h2 id="22-私人订制"><a class="markdownIt-Anchor" href="#22-私人订制">#</a> 2.2 私人订制</h2>
+<h3 id="221-定义变量"><a class="markdownIt-Anchor" href="#221-定义变量">#</a> 2.2.1 定义变量</h3>
+<p>在上面的例子中一共提供了 5 个源文件，假设这五个源文件需要反复被使用，每次都直接将它们的名字写出来确实是很麻烦，此时我们就需要定义一个变量，将文件名对应的字符串存储起来，在 cmake 里定义变量需要使用 set。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># SET 指令的语法是：</span></span><br><span class="line"><span class="comment"># [] 中的参数为可选项, 如不需要可以不写</span></span><br><span class="line"><span class="keyword">SET</span>(VAR [VALUE] [CACHE TYPE DOCSTRING [FORCE]])</span><br></pre></td></tr></table></figure>
+<p>VAR：变量名<br>
+ VALUE：变量值</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 方式1: 各个源文件之间使用空格间隔</span></span><br><span class="line"><span class="comment"># set(SRC_LIST add.c  div.c   main.c  mult.c  sub.c)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方式2: 各个源文件之间使用分号 ; 间隔</span></span><br><span class="line"><span class="keyword">set</span>(SRC_LIST add.c;div.c;main.c;mult.c;sub.c)</span><br><span class="line"><span class="keyword">add_executable</span>(app  <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="222-指定使用的c标准"><a class="markdownIt-Anchor" href="#222-指定使用的c标准">#</a> 2.2.2 指定使用的 C++ 标准</h3>
+<p>在编写 C<ins> 程序的时候，可能会用到 C</ins>11、C<ins>14、C</ins>17、C++20 等新特性，那么就需要在编译的时候在编译命令中制定出要使用哪个标准：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$ </span><span class="language-bash">g++ *.cpp -std=c++11 -o app</span></span><br></pre></td></tr></table></figure>
+<p>上面的例子中通过参数 - std=c<ins>11 指定出要使用 c</ins>11 标准编译程序，C<ins> 标准对应有一宏叫做 DCMAKE_CXX_STANDARD。在 CMake 中想要指定 C</ins> 标准有两种方式：</p>
+<p>在 CMakeLists.txt 中通过 set 命令指定</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加-std=c++11</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">11</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#增加-std=c++14</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#增加-std=c++17</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">17</span>)</span><br></pre></td></tr></table></figure>
+<p>在执行 cmake 命令的时候指定出这个宏的值</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#增加-std=c++11</span></span><br><span class="line">cmake CMakeLists.txt文件路径 -DCMAKE_CXX_STANDARD=<span class="number">11</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#增加-std=c++14</span></span><br><span class="line">cmake CMakeLists.txt文件路径 -DCMAKE_CXX_STANDARD=<span class="number">14</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#增加-std=c++17</span></span><br><span class="line">cmake CMakeLists.txt文件路径 -DCMAKE_CXX_STANDARD=<span class="number">17</span></span><br></pre></td></tr></table></figure>
+<p>在上面例子中 CMake 后的路径需要根据实际情况酌情修改。</p>
+<h3 id="223-指定输出的路径"><a class="markdownIt-Anchor" href="#223-指定输出的路径">#</a> 2.2.3 指定输出的路径</h3>
+<p>在 CMake 中指定可执行程序输出的路径，也对应一个宏，叫做 EXECUTABLE_OUTPUT_PATH，它的值还是通过 set 命令进行设置:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(HOME /home/robin/Linux/Sort)</span><br><span class="line"><span class="keyword">set</span>(EXECUTABLE_OUTPUT_PATH <span class="variable">$&#123;HOME&#125;</span>/bin)</span><br></pre></td></tr></table></figure>
+<p>第一行：定义一个变量用于存储一个绝对路径<br>
+第二行：将拼接好的路径值设置给 EXECUTABLE_OUTPUT_PATH 宏<br>
+如果这个路径中的子目录不存在，会自动生成，无需自己手动创建</p>
+<p>由于可执行程序是基于 cmake 命令生成的 makefile 文件然后再执行 make 命令得到的，所以如果此处指定可执行程序生成路径的时候使用的是相对路径 ./xxx/xxx，那么这个路径中的 ./ 对应的就是 makefile 文件所在的那个目录。</p>
+<h2 id="23-搜索文件"><a class="markdownIt-Anchor" href="#23-搜索文件">#</a> 2.3 搜索文件</h2>
+<p>如果一个项目里边的源文件很多，在编写 CMakeLists.txt 文件的时候不可能将项目目录的各个文件一一罗列出来，这样太麻烦也不现实。所以，在 CMake 中为我们提供了搜索文件的命令，可以使用 <code>aux_source_directory</code>  命令或者 file 命令。</p>
+<h3 id="231-方式1"><a class="markdownIt-Anchor" href="#231-方式1">#</a> 2.3.1 方式 1</h3>
+<p>在 CMake 中使用 aux_source_directory 命令可以查找某个路径下的所有源文件，命令格式为：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">aux_source_directory</span>(&lt; dir &gt; &lt; variable &gt;)</span><br></pre></td></tr></table></figure>
+<p>dir：要搜索的目录<br>
+ variable：将从 dir 目录下搜索到的源文件列表存储到该变量中</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="comment"># 搜索 src 目录下的源文件</span></span><br><span class="line"><span class="keyword">aux_source_directory</span>(<span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/src SRC_LIST)</span><br><span class="line"><span class="keyword">add_executable</span>(app  <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="232-方式2"><a class="markdownIt-Anchor" href="#232-方式2">#</a> 2.3.2 方式 2</h3>
+<p>如果一个项目里边的源文件很多，在编写 CMakeLists.txt 文件的时候不可能将项目目录的各个文件一一罗列出来，这样太麻烦了。所以，在 CMake 中为我们提供了搜索文件的命令，他就是 file（当然，除了搜索以外通过 file 还可以做其他事情）。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB/GLOB_RECURSE 变量名 要搜索的文件路径和文件类型)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>GLOB</code> : 将指定目录下搜索到的满足条件的所有文件名生成一个列表，并将其存储到变量中。</li>
+<li><code>GLOB_RECURSE</code> ：递归搜索指定目录，将搜索到的满足条件的文件名生成一个列表，并将其存储到变量中。</li>
+</ul>
+<p>搜索当前目录的 src 目录下所有的源文件，并存储到变量中</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB MAIN_SRC <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/src/*.cpp)</span><br><span class="line"><span class="keyword">file</span>(GLOB MAIN_HEAD <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>/*.h)</span><br></pre></td></tr></table></figure>
+<p><code>CMAKE_CURRENT_SOURCE_DIR</code>  宏表示当前访问的 CMakeLists.txt 文件所在的路径。</p>
+<p>关于要搜索的文件路径和类型可加双引号，也可不加:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">file</span>(GLOB MAIN_HEAD <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/src/*.h&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="24-包含头文件"><a class="markdownIt-Anchor" href="#24-包含头文件">#</a> 2.4 包含头文件</h2>
+<p>在编译项目源文件的时候，很多时候都需要将源文件对应的头文件路径指定出来，这样才能保证在编译过程中编译器能够找到这些头文件，并顺利通过编译。在 CMake 中设置要包含的目录也很简单，通过一个命令就可以搞定了，他就是 <code>include_directories</code> :</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(headpath)</span><br></pre></td></tr></table></figure>
+<p>举例说明，有源文件若干，其目录结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$ tree</span><br><span class="line">.</span><br><span class="line">├── build</span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── include</span><br><span class="line">│   └── head.h</span><br><span class="line">└── src</span><br><span class="line">    ├── add.cpp</span><br><span class="line">    ├── div.cpp</span><br><span class="line">    ├── main.cpp</span><br><span class="line">    ├── mult.cpp</span><br><span class="line">    └── sub.cpp</span><br><span class="line"></span><br><span class="line">3 directories, 7 files</span><br></pre></td></tr></table></figure>
+<p>CMakeLists.txt 文件内容如下:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">11</span>)</span><br><span class="line"><span class="keyword">set</span>(HOME /home/robin/Linux/calc)</span><br><span class="line"><span class="keyword">set</span>(EXECUTABLE_OUTPUT_PATH <span class="variable">$&#123;HOME&#125;</span>/bin/)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/src/*.cpp)</span><br><span class="line"><span class="keyword">add_executable</span>(app  <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>其中，第六行指定就是头文件的路径， <code>PROJECT_SOURCE_DIR</code>  宏对应的值就是我们在使用 cmake 命令时，后面紧跟的目录，一般是工程的根目录。</p>
+<h2 id="25-制作动态库或静态库"><a class="markdownIt-Anchor" href="#25-制作动态库或静态库">#</a> 2.5 制作动态库或静态库</h2>
+<p>有些时候我们编写的源代码并不需要将他们编译生成可执行程序，而是生成一些静态库或动态库提供给第三方使用，下面来讲解在 cmake 中生成这两类库文件的方法。</p>
+<h3 id="251-制作静态库"><a class="markdownIt-Anchor" href="#251-制作静态库">#</a> 2.5.1 制作静态库</h3>
+<p>在 cmake 中，如果要制作静态库，需要使用的命令如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(库名称 STATIC 源文件<span class="number">1</span> [源文件<span class="number">2</span>] ...) </span><br></pre></td></tr></table></figure>
+<p>在 Linux 中，静态库名字分为三部分：lib + 库名字 +.a，此处只需要指定出库的名字就可以了，另外两部分在生成该文件的时候会自动填充。</p>
+<p>在 Windows 中虽然库名和 Linux 格式不同，但也只需指定出名字即可。</p>
+<p>下面有一个目录，需要将 src 目录中的源文件编译成静态库，然后再使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── build</span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── include           # 头文件目录</span><br><span class="line">│   └── head.h</span><br><span class="line">├── main.cpp          # 用于测试的源文件</span><br><span class="line">└── src               # 源文件目录</span><br><span class="line">    ├── add.cpp</span><br><span class="line">    ├── div.cpp</span><br><span class="line">    ├── mult.cpp</span><br><span class="line">    └── sub.cpp</span><br></pre></td></tr></table></figure>
+<p>根据上面的目录结构，可以这样编写 CMakeLists.txt 文件:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/src/*.cpp&quot;</span>)</span><br><span class="line"><span class="keyword">add_library</span>(calc STATIC <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>这样最终就会生成对应的静态库文件 <code>libcalc.a</code> 。</p>
+<h3 id="252-制作动态库"><a class="markdownIt-Anchor" href="#252-制作动态库">#</a> 2.5.2 制作动态库</h3>
+<p>在 cmake 中，如果要制作动态库，需要使用的命令如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(库名称 SHARED 源文件<span class="number">1</span> [源文件<span class="number">2</span>] ...) </span><br></pre></td></tr></table></figure>
+<p>在 Linux 中，动态库名字分为三部分：<span class="exturl" data-url="aHR0cDovL3huLS1saWIrKy0yMDhobTk0YmhqZy5zbw==">lib + 库名字 +.so</span>，此处只需要指定出库的名字就可以了，另外两部分在生成该文件的时候会自动填充。</p>
+<p>在 Windows 中虽然库名和 Linux 格式不同，但也只需指定出名字即可。</p>
+<p>根据上面的目录结构，可以这样编写 CMakeLists.txt 文件:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/src/*.cpp&quot;</span>)</span><br><span class="line"><span class="keyword">add_library</span>(calc SHARED <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cDovL3huLS1saWJjYWxjLWRnNWtua3g3MmF0djBhZnRhMzF3bWEwOTVjMnlqOHpwd25nMm1nZG45ZWtlZzQzNGM4OTdlLnNv">这样最终就会生成对应的动态库文件 libcalc.so</span>。</p>
+<h3 id="253-指定输出的路径"><a class="markdownIt-Anchor" href="#253-指定输出的路径">#</a> 2.5.3 指定输出的路径</h3>
+<h4 id="方式1-适用于动态库"><a class="markdownIt-Anchor" href="#方式1-适用于动态库">#</a> 方式 1 - 适用于动态库</h4>
+<p>对于生成的库文件来说和可执行程序一样都可以指定输出路径。由于在 Linux 下生成的动态库默认是有执行权限的，所以可以按照生成可执行程序的方式去指定它生成的目录：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/src/*.cpp&quot;</span>)</span><br><span class="line"><span class="comment"># 设置动态库生成路径</span></span><br><span class="line"><span class="keyword">set</span>(EXECUTABLE_OUTPUT_PATH <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/lib)</span><br><span class="line"><span class="keyword">add_library</span>(calc SHARED <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>对于这种方式来说，其实就是通过 set 命令给 EXECUTABLE_OUTPUT_PATH 宏设置了一个路径，这个路径就是可执行文件生成的路径。</p>
+<h4 id="方式2-都适用"><a class="markdownIt-Anchor" href="#方式2-都适用">#</a> 方式 2 - 都适用</h4>
+<p>由于在 Linux 下生成的静态库默认不具有可执行权限，所以在指定静态库生成的路径的时候就不能使用 <code>EXECUTABLE_OUTPUT_PATH</code>  宏了，而应该使用 <code>LIBRARY_OUTPUT_PATH</code> ，这个宏对应静态库文件和动态库文件都适用。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="string">&quot;$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;/src/*.cpp&quot;</span>)</span><br><span class="line"><span class="comment"># 设置动态库/静态库生成路径</span></span><br><span class="line"><span class="keyword">set</span>(LIBRARY_OUTPUT_PATH <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/lib)</span><br><span class="line"><span class="comment"># 生成动态库</span></span><br><span class="line"><span class="comment">#add_library(calc SHARED $&#123;SRC_LIST&#125;)</span></span><br><span class="line"><span class="comment"># 生成静态库</span></span><br><span class="line"><span class="keyword">add_library</span>(calc STATIC <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="26-包含库文件"><a class="markdownIt-Anchor" href="#26-包含库文件">#</a> 2.6 包含库文件</h2>
+<p>在编写程序的过程中，可能会用到一些系统提供的动态库或者自己制作出的动态库或者静态库文件，cmake 中也为我们提供了相关的加载动态库的命令。</p>
+<h3 id="261-链接静态库"><a class="markdownIt-Anchor" href="#261-链接静态库">#</a> 2.6.1 链接静态库</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">├── add.cpp</span><br><span class="line">├── div.cpp</span><br><span class="line">├── main.cpp</span><br><span class="line">├── mult.cpp</span><br><span class="line">└── sub.cpp</span><br></pre></td></tr></table></figure>
+<p>现在我们把上面 src 目录中的 add.cpp、div.cpp、mult.cpp、sub.cpp 编译成一个静态库文件 libcalc.a。通过命令制作并使用静态链接库</p>
+<p>测试目录结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ tree </span><br><span class="line">.</span><br><span class="line">├── build</span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── include</span><br><span class="line">│   └── head.h</span><br><span class="line">├── lib</span><br><span class="line">│   └── libcalc.a     # 制作出的静态库的名字</span><br><span class="line">└── src</span><br><span class="line">    └── main.cpp</span><br><span class="line"></span><br><span class="line">4 directories, 4 files</span><br></pre></td></tr></table></figure>
+<p>在 cmake 中，链接静态库的命令如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">link_libraries</span>(&lt;static lib&gt; [&lt;static lib&gt;...])</span><br></pre></td></tr></table></figure>
+<p>用于设置全局链接库，这些库会链接到之后定义的所有目标上。</p>
+<p>参数 1：指定出要链接的静态库的名字<br>
+可以是全名  <code>libxxx.a</code> <br>
+ 也可以是掐头（lib）去尾（.a）之后的名字  <code>xxx</code> <br>
+ 参数 2-N：要链接的其它静态库的名字</p>
+<p>如果该静态库不是系统提供的（自己制作或者使用第三方提供的静态库）可能出现静态库找不到的情况，此时可以将静态库的路径也指定出来：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">link_directories</span>(&lt;lib path&gt;)</span><br></pre></td></tr></table></figure>
+<p>这样，修改之后的 CMakeLists.txt 文件内容如下:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(CALC)</span><br><span class="line"><span class="comment"># 搜索指定目录下源文件</span></span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/src/*.cpp)</span><br><span class="line"><span class="comment"># 包含头文件路径</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="comment"># 包含静态库路径</span></span><br><span class="line"><span class="keyword">link_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/lib)</span><br><span class="line"><span class="comment"># 链接静态库</span></span><br><span class="line"><span class="keyword">link_libraries</span>(calc)</span><br><span class="line"><span class="keyword">add_executable</span>(app <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>添加了第 8 行的代码，就可以根据参数指定的路径找到这个静态库了。</p>
+<h3 id="262-链接动态库"><a class="markdownIt-Anchor" href="#262-链接动态库">#</a> 2.6.2 链接动态库</h3>
+<p>在程序编写过程中，除了在项目中引入静态库，好多时候也会使用一些标准的或者第三方提供的一些动态库，关于动态库的制作、使用以及在内存中的加载方式和静态库都是不同的，在此不再过多赘述，如有疑惑请参考 Linux 静态库和动态库</p>
+<p>在 cmake 中链接动态库的命令如下:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(</span><br><span class="line">    &lt;<span class="keyword">target</span>&gt; </span><br><span class="line">    &lt;PRIVATE|PUBLIC|INTERFACE&gt; &lt;item&gt;... </span><br><span class="line">    [&lt;PRIVATE|PUBLIC|INTERFACE&gt; &lt;item&gt;...]...)</span><br></pre></td></tr></table></figure>
+<p>用于指定一个目标（如可执行文件或库）在编译时需要链接哪些库。它支持指定库的名称、路径以及链接库的顺序。</p>
+<p>target：指定要加载的库的文件的名字</p>
+<ul>
+<li>该文件可能是一个源文件</li>
+<li>该文件可能是一个动态库 / 静态库文件</li>
+<li>该文件可能是一个可执行文件</li>
+</ul>
+<p><code>PRIVATE</code> | <code>PUBLIC</code> | <code>INTERFACE</code> ：动态库的访问权限，默认为 <code>PUBLIC</code></p>
+<p>如果各个动态库之间没有依赖关系，无需做任何设置，三者没有没有区别，一般无需指定，使用默认的 PUBLIC 即可。</p>
+<p>动态库的链接具有传递性，如果动态库 A 链接了动态库 B、C，动态库 D 链接了动态库 A，此时动态库 D 相当于也链接了动态库 B、C，并可以使用动态库 B、C 中定义的方法。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(A B C)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(D A)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>PUBLIC：在 public 后面的库会被 Link 到前面的 target 中，并且里面的符号也会被导出，提供给第三方使用。</li>
+<li>PRIVATE：在 private 后面的库仅被 link 到前面的 target 中，并且终结掉，第三方不能感知你调了啥库</li>
+<li>INTERFACE：在 interface 后面引入的库不会被链接到前面的 target 中，只会导出符号。</li>
+</ul>
+<h4 id="链接系统动态库"><a class="markdownIt-Anchor" href="#链接系统动态库">#</a> 链接系统动态库</h4>
+<p>动态库的链接和静态库是完全不同的：</p>
+<ul>
+<li>静态库会在生成可执行程序的链接阶段被打包到可执行程序中，所以可执行程序启动，静态库就被加载到内存中了。</li>
+<li>动态库在生成可执行程序的链接阶段不会被打包到可执行程序中，当可执行程序被启动并且调用了动态库中的函数的时候，动态库才会被加载到内存</li>
+</ul>
+<p>因此，在 cmake 中指定要链接的动态库的时候，应该将命令写到生成了可执行文件之后：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(<span class="keyword">TEST</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/*.cpp)</span><br><span class="line"><span class="comment"># 添加并指定最终生成的可执行程序名</span></span><br><span class="line"><span class="keyword">add_executable</span>(app <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br><span class="line"><span class="comment"># 指定可执行程序要链接的动态库名字</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(app pthread)</span><br></pre></td></tr></table></figure>
+<p>在 target_link_libraries (app pthread) 中：</p>
+<ul>
+<li>app: 对应的是最终生成的可执行程序的名字</li>
+<li>pthread：这是可执行程序要加载的动态库，这个库是系统提供的线程库，<span class="exturl" data-url="aHR0cDovL3huLS1saWJwdGhyZWFkLXh4MnBoOTFhcTFpLnNv">全名为 libpthread.so</span>，在指定的时候一般会掐头（lib）去尾（.so）。</li>
+</ul>
+<h4 id="链接第三方动态库"><a class="markdownIt-Anchor" href="#链接第三方动态库">#</a> 链接第三方动态库</h4>
+<p>现在，自己生成了一个动态库，对应的目录结构如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ tree </span><br><span class="line">.</span><br><span class="line">├── build</span><br><span class="line">├── CMakeLists.txt</span><br><span class="line">├── include</span><br><span class="line">│   └── head.h            # 动态库对应的头文件</span><br><span class="line">├── lib</span><br><span class="line">│   └── libcalc.so        # 自己制作的动态库文件</span><br><span class="line">└── main.cpp              # 测试用的源文件</span><br><span class="line"></span><br><span class="line">3 directories, 4 files</span><br></pre></td></tr></table></figure>
+<p>假设在测试文件 main.cpp 中既使用了自己制作的动态库 libcalc.so 又使用了系统提供的线程库，此时 CMakeLists.txt 文件可以这样写：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(<span class="keyword">TEST</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/*.cpp)</span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">add_executable</span>(app <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(app pthread calc)</span><br></pre></td></tr></table></figure>
+<p>在第六行中， <code>pthread</code> 、 <code>calc</code>  都是可执行程序 app 要链接的动态库的名字。当可执行程序 app 生成之后并执行该文件，会提示有如下错误信息：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./app </span><br><span class="line">./app: error <span class="keyword">while</span> loading shared libraries: libcalc.so: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure>
+<p>这是因为可执行程序启动之后，去加载 calc 这个动态库，但是不知道这个动态库被放到了什么位置解决动态库无法加载的问题，所以就加载失败了，在 CMake 中可以在生成可执行程序之前，通过命令指定出要链接的动态库的位置，指定静态库位置使用的也是这个命令：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">link_directories</span>(path)</span><br><span class="line"></span><br><span class="line">所以修改之后的CMakeLists.txt文件应该是这样的：</span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(<span class="keyword">TEST</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_LIST <span class="variable">$&#123;CMAKE_CURRENT_SOURCE_DIR&#125;</span>/*.cpp)</span><br><span class="line"><span class="comment"># 指定源文件或者动态库对应的头文件路径</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br><span class="line"><span class="comment"># 指定要链接的动态库的路径</span></span><br><span class="line"><span class="keyword">link_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/lib)</span><br><span class="line"><span class="comment"># 添加并生成一个可执行程序</span></span><br><span class="line"><span class="keyword">add_executable</span>(app <span class="variable">$&#123;SRC_LIST&#125;</span>)</span><br><span class="line"><span class="comment"># 指定要链接的动态库</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(app pthread calc)</span><br></pre></td></tr></table></figure>
+<p>通过 link_directories 指定了动态库的路径之后，在执行生成的可执行程序的时候，就不会出现找不到动态库的问题了。</p>
+<h3 id="263-总结"><a class="markdownIt-Anchor" href="#263-总结">#</a> 2.6.3 总结</h3>
+<p>温馨提示：target_link_libraries 和  link_libraries 是 CMake 中用于链接库的两个命令，都可以用于链接动态库和静态库，但它们的使用场景和功能有所不同。下面是关于二者的总结：</p>
+<h4 id="target_link_libraries"><a class="markdownIt-Anchor" href="#target_link_libraries">#</a>  <code>target_link_libraries</code></h4>
+<p>功能: target_link_libraries 用于指定一个目标（如可执行文件或库）在编译时需要链接哪些库。它支持指定库的名称、路径以及链接库的顺序。</p>
+<p>语法:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(target_name [item1 [item2 [...]]]</span><br><span class="line">					  [&lt;debug|optimized|general&gt; &lt;lib1&gt; [&lt;lib2&gt; [...]]])</span><br></pre></td></tr></table></figure>
+<p>优点:</p>
+<ul>
+<li>更精确地控制目标的链接库。</li>
+<li>可以指定库的不同链接条件（如调试版本、发布版本）。</li>
+<li>支持多个目标和多个库之间的复杂关系。</li>
+<li>更加灵活和易于维护，特别是在大型项目中。</li>
+</ul>
+<p>示例:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(my_executable main.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(my_executable PRIVATE my_dynamic_library)</span><br></pre></td></tr></table></figure>
+<h4 id="link_libraries"><a class="markdownIt-Anchor" href="#link_libraries">#</a>  <code>link_libraries</code></h4>
+<p>功能: link_libraries 用于设置全局链接库，这些库会链接到之后定义的所有目标上。它会影响所有的目标，适用于全局设置，但不如 target_link_libraries 精确。</p>
+<p>语法:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">link_libraries</span>(lib1 lib2 [...])</span><br></pre></td></tr></table></figure>
+<p>缺点:</p>
+<ul>
+<li>缺乏针对具体目标的控制，不适合复杂的项目结构。</li>
+<li>容易导致意外的依赖关系，因为它对所有目标都生效。</li>
+<li>一旦设置，全局影响可能导致难以追踪的链接问题。</li>
+</ul>
+<p>示例:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">link_libraries</span>(my_static_library)</span><br><span class="line"><span class="keyword">add_executable</span>(my_executable main.cpp)</span><br></pre></td></tr></table></figure>
+<p>总结</p>
+<ul>
+<li><code>target_link_libraries</code>  是更推荐的方式，因为它允许更精确的控制和管理链接库的依赖，特别是在大型项目中，它能够避免全局设置可能带来的问题。</li>
+<li><code>link_libraries</code>  虽然简单，但在复杂的项目中可能会导致意外的问题，通常适用于简单的项目或临时设置。</li>
+</ul>
+<p>建议在 CMake 项目中优先使用 target_link_libraries。</p>
+<h2 id="27-日志"><a class="markdownIt-Anchor" href="#27-日志">#</a> 2.7 日志</h2>
+<p>在 CMake 中可以用用户显示一条消息，该命令的名字为 message：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">message</span>([STATUS|WARNING|AUTHOR_WARNING|FATAL_ERROR|SEND_ERROR] <span class="string">&quot;message to display&quot;</span> ...)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>(无) ：重要消息</li>
+<li><code>STATUS</code>  ：非重要消息</li>
+<li><code>WARNING</code> ：CMake 警告，会继续执行</li>
+<li><code>AUTHOR_WARNING</code> ：CMake 警告 (dev), 会继续执行</li>
+<li><code>SEND_ERROR</code> ：CMake 错误，继续执行，但是会跳过生成的步骤</li>
+<li><code>FATAL_ERROR</code> ：CMake 错误，终止所有处理过程</li>
+</ul>
+<p>CMake 的命令行工具会在 stdout 上显示 <code>STATUS</code>  消息，在 stderr 上显示其他所有消息。CMake 的 GUI 会在它的 log 区域显示所有消息。</p>
+<p>CMake 警告和错误消息的文本显示使用的是一种简单的标记语言。文本没有缩进，超过长度的行会回卷，段落之间以新行做为分隔符。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输出一般日志信息</span></span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">&quot;source path: $&#123;PROJECT_SOURCE_DIR&#125;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出警告信息</span></span><br><span class="line"><span class="keyword">message</span>(WARNING <span class="string">&quot;source path: $&#123;PROJECT_SOURCE_DIR&#125;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出错误信息</span></span><br><span class="line"><span class="keyword">message</span>(FATAL_ERROR <span class="string">&quot;source path: $&#123;PROJECT_SOURCE_DIR&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="28-变量操作"><a class="markdownIt-Anchor" href="#28-变量操作">#</a> 2.8 变量操作</h2>
+<h3 id="281-追加"><a class="markdownIt-Anchor" href="#281-追加">#</a> 2.8.1 追加</h3>
+<p>有时候项目中的源文件并不一定都在同一个目录中，但是这些源文件最终却需要一起进行编译来生成最终的可执行文件或者库文件。如果我们通过 file 命令对各个目录下的源文件进行搜索，最后还需要做一个字符串拼接的操作，关于字符串拼接可以使用 set 命令也可以使用 list 命令。</p>
+<h4 id="使用set拼接"><a class="markdownIt-Anchor" href="#使用set拼接">#</a> 使用 <code>set</code>  拼接</h4>
+<p>如果使用 set 进行字符串拼接，对应的命令格式如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(变量名<span class="number">1</span> <span class="variable">$&#123;变量名1&#125;</span> <span class="variable">$&#123;变量名2&#125;</span> ...)</span><br></pre></td></tr></table></figure>
+<p>关于上面的命令其实就是将从第二个参数开始往后所有的字符串进行拼接，最后将结果存储到第一个参数中，如果第一个参数中原来有数据会对原数据就行覆盖。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(<span class="keyword">TEST</span>)</span><br><span class="line"><span class="keyword">set</span>(TEMP <span class="string">&quot;hello,world&quot;</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_1 <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/src1/*.cpp)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_2 <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/src2/*.cpp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加(拼接)</span></span><br><span class="line"><span class="keyword">set</span>(SRC_1 <span class="variable">$&#123;SRC_1&#125;</span> <span class="variable">$&#123;SRC_2&#125;</span> <span class="variable">$&#123;TEMP&#125;</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">&quot;message: $&#123;SRC_1&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="使用list拼接"><a class="markdownIt-Anchor" href="#使用list拼接">#</a> 使用 <code>list</code>  拼接</h4>
+<p>如果使用 list 进行字符串拼接，对应的命令格式如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(APPEND &lt;<span class="keyword">list</span>&gt; [&lt;element&gt; ...])</span><br></pre></td></tr></table></figure>
+<p>list 命令的功能比 set 要强大，字符串拼接只是它的其中一个功能，所以需要在它第一个参数的位置指定出我们要做的操作，APPEND 表示进行数据追加，后边的参数和 set 就一样了。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(<span class="keyword">TEST</span>)</span><br><span class="line"><span class="keyword">set</span>(TEMP <span class="string">&quot;hello,world&quot;</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_1 <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/src1/*.cpp)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_2 <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/src2/*.cpp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 追加(拼接)</span></span><br><span class="line"><span class="keyword">list</span>(APPEND SRC_1 <span class="variable">$&#123;SRC_1&#125;</span> <span class="variable">$&#123;SRC_2&#125;</span> <span class="variable">$&#123;TEMP&#125;</span>)</span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">&quot;message: $&#123;SRC_1&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>在 CMake 中，使用 set 命令可以创建一个 list。一个在 list 内部是一个由分号；分割的一组字符串。例如，set (var a b c d e) 命令将会创建一个 list:a;b;c;d;e，但是最终打印变量值的时候得到的是 abcde。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(tmp1 a;b;c;d;e)</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span>(tmp2 a b c d e)</span><br><span class="line"></span><br><span class="line"><span class="keyword">message</span>(<span class="variable">$&#123;tmp1&#125;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">message</span>(<span class="variable">$&#123;tmp2&#125;</span>)</span><br></pre></td></tr></table></figure>
+<p>输出的结果:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">abcde</span><br><span class="line">abcde</span><br></pre></td></tr></table></figure>
+<h3 id="282-字符串移除"><a class="markdownIt-Anchor" href="#282-字符串移除">#</a> 2.8.2 字符串移除</h3>
+<p>我们在通过 file 搜索某个目录就得到了该目录下所有的源文件，但是其中有些源文件并不是我们所需要的，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ tree</span><br><span class="line">.</span><br><span class="line">├── add.cpp</span><br><span class="line">├── div.cpp</span><br><span class="line">├── main.cpp</span><br><span class="line">├── mult.cpp</span><br><span class="line">└── sub.cpp</span><br><span class="line"></span><br><span class="line">0 directories, 5 files</span><br></pre></td></tr></table></figure>
+<p>在当前这么目录有五个源文件，其中 main.cpp 是一个测试文件。如果我们想要把计算器相关的源文件生成一个动态库给别人使用，那么只需要 add.cpp、div.cp、mult.cpp、sub.cpp 这四个源文件就可以了。此时，就需要将 main.cpp 从搜索到的数据中剔除出去，想要实现这个功能，也可以使用 list</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(REMOVE_ITEM &lt;<span class="keyword">list</span>&gt; &lt;value&gt; [&lt;value&gt; ...])</span><br></pre></td></tr></table></figure>
+<p>通过上面的命令原型可以看到删除和追加数据类似，只不过是第一个参数变成了 <code>REMOVE_ITEM</code> 。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(<span class="keyword">TEST</span>)</span><br><span class="line"><span class="keyword">set</span>(TEMP <span class="string">&quot;hello,world&quot;</span>)</span><br><span class="line"><span class="keyword">file</span>(GLOB SRC_1 <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/*.cpp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除前日志</span></span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">&quot;message: $&#123;SRC_1&#125;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除 main.cpp</span></span><br><span class="line"><span class="keyword">list</span>(REMOVE_ITEM SRC_1 <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/main.cpp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移除后日志</span></span><br><span class="line"><span class="keyword">message</span>(STATUS <span class="string">&quot;message: $&#123;SRC_1&#125;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>可以看到，在第 8 行把将要移除的文件的名字指定给 list 就可以了。但是一定要注意通过 file 命令搜索源文件的时候得到的是文件的绝对路径（在 list 中每个文件对应的路径都是一个 item，并且都是绝对路径），那么在移除的时候也要将该文件的绝对路径指定出来才可以，否是移除操作不会成功。</p>
+<p>关于 list 命令还有其它功能，但是并不常用，在此就不一一进行举例介绍了。</p>
+<p>获取 list 的长度。</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(LENGTH &lt;<span class="keyword">list</span>&gt; &lt;output variable&gt;)</span><br></pre></td></tr></table></figure>
+<p>LENGTH：子命令 LENGTH 用于读取列表长度</p>
+<ul>
+<li><code>&lt;list&gt;</code> ：当前操作的列表</li>
+<li><code>&lt;output variable&gt;</code> ：新创建的变量，用于存储列表的长度。</li>
+</ul>
+<p>读取列表中指定索引的的元素，可以指定多个索引</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(GET &lt;<span class="keyword">list</span>&gt; &lt;element index&gt; [&lt;element index&gt; ...] &lt;output variable&gt;)</span><br></pre></td></tr></table></figure>
+<p><code>&lt;list&gt;</code> ：当前操作的列表<br>
+ <code>&lt;element index&gt;</code> ：列表元素的索引</p>
+<ul>
+<li>从 0 开始编号，索引 0 的元素为列表中的第一个元素；</li>
+<li>索引也可以是负数，-1 表示列表的最后一个元素，-2 表示列表倒数第二个元素，以此类推</li>
+<li>当索引（不管是正还是负）超过列表的长度，运行会报错</li>
+</ul>
+<p><code>&lt;output variable&gt;</code> ：新创建的变量，存储指定索引元素的返回结果，也是一个列表。</p>
+<p>将列表中的元素用连接符（字符串）连接起来组成一个字符串</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (JOIN &lt;<span class="keyword">list</span>&gt; &lt;glue&gt; &lt;output variable&gt;)</span><br></pre></td></tr></table></figure>
+<p><code>&lt;list&gt;</code> ：当前操作的列表<br>
+ <code>&lt;glue&gt;</code> ：指定的连接符（字符串）<br>
+ <code>&lt;output variable&gt;</code> ：新创建的变量，存储返回的字符串</p>
+<p>查找列表是否存在指定的元素，若果未找到，返回 - 1</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(FIND &lt;<span class="keyword">list</span>&gt; &lt;value&gt; &lt;output variable&gt;)</span><br></pre></td></tr></table></figure>
+<p><code>&lt;list&gt;</code> ：当前操作的列表<br>
+ <code>&lt;value&gt;</code> ：需要再列表中搜索的元素<br>
+ <code>&lt;output variable&gt;</code> ：新创建的变量<br>
+如果列表 <code>&lt;list&gt;</code>  中存在 <code>&lt;value&gt;</code> ，那么返回 <code>&lt;value&gt;</code>  在列表中的索引<br>
+如果未找到则返回 - 1。</p>
+<p>将元素追加到列表中</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (APPEND &lt;<span class="keyword">list</span>&gt; [&lt;element&gt; ...])</span><br></pre></td></tr></table></figure>
+<p>在 list 中指定的位置插入若干元素</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(INSERT &lt;<span class="keyword">list</span>&gt; &lt;element_index&gt; &lt;element&gt; [&lt;element&gt; ...])</span><br></pre></td></tr></table></figure>
+<p>将元素插入到列表的 0 索引位置</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (PREPEND &lt;<span class="keyword">list</span>&gt; [&lt;element&gt; ...])</span><br></pre></td></tr></table></figure>
+<p>将列表中最后元素移除</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (POP_BACK &lt;<span class="keyword">list</span>&gt; [&lt;out-var&gt;...])</span><br></pre></td></tr></table></figure>
+<p>将列表中第一个元素移除</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (POP_FRONT &lt;<span class="keyword">list</span>&gt; [&lt;out-var&gt;...])</span><br></pre></td></tr></table></figure>
+<p>将指定的元素从列表中移除</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (REMOVE_ITEM &lt;<span class="keyword">list</span>&gt; &lt;value&gt; [&lt;value&gt; ...])</span><br></pre></td></tr></table></figure>
+<p>将指定索引的元素从列表中移除</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (REMOVE_AT &lt;<span class="keyword">list</span>&gt; &lt;index&gt; [&lt;index&gt; ...])</span><br></pre></td></tr></table></figure>
+<p>移除列表中的重复元素</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (REMOVE_DUPLICATES &lt;<span class="keyword">list</span>&gt;)</span><br></pre></td></tr></table></figure>
+<p>列表翻转</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span>(REVERSE &lt;<span class="keyword">list</span>&gt;)</span><br></pre></td></tr></table></figure>
+<p>列表排序</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">list</span> (SORT &lt;<span class="keyword">list</span>&gt; [COMPARE &lt;compare&gt;] [CASE &lt;case&gt;] [ORDER &lt;order&gt;])</span><br></pre></td></tr></table></figure>
+<p><code>COMPARE</code> ：指定排序方法。有如下几种值可选：</p>
+<ul>
+<li><code>STRING</code> : 按照字母顺序进行排序，为默认的排序方法</li>
+<li><code>FILE_BASENAME</code> ：如果是一系列路径名，会使用 basename 进行排序</li>
+<li><code>NATURAL</code> ：使用自然数顺序排序</li>
+</ul>
+<p><code>CASE</code> ：指明是否大小写敏感。有如下几种值可选：</p>
+<ul>
+<li><code>SENSITIVE</code> : 按照大小写敏感的方式进行排序，为默认值</li>
+<li><code>INSENSITIVE</code> ：按照大小写不敏感方式进行排序</li>
+</ul>
+<p><code>ORDER</code> ：指明排序的顺序。有如下几种值可选：</p>
+<ul>
+<li><code>ASCENDING</code> : 按照升序排列，为默认值</li>
+<li><code>DESCENDING</code> ：按照降序排列</li>
+</ul>
+<h2 id="29-宏定义"><a class="markdownIt-Anchor" href="#29-宏定义">#</a> 2.9 宏定义</h2>
+<p>在进行程序测试的时候，我们可以在代码中添加一些宏定义，通过这些宏来控制这些代码是否生效，如下所示：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NUMBER  3</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> a = <span class="number">10</span>;</span><br><span class="line">	<span class="meta">#<span class="keyword">ifdef</span> DEBUG</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;我是一个程序猿, 我不会爬树...\n&quot;</span>);</span><br><span class="line">	<span class="meta">#<span class="keyword">endif</span></span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;NUMBER; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;hello, GCC!!!\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在程序的第七行对 DEBUG 宏进行了判断，如果该宏被定义了，那么第八行就会进行日志输出，如果没有定义这个宏，第八行就相当于被注释掉了，因此最终无法看到日志输入出（上述代码中并没有定义这个宏）。</p>
+<p>为了让测试更灵活，我们可以不在代码中定义这个宏，而是在测试的时候去把它定义出来，其中一种方式就是在 <code>gcc/g++</code>  命令中去指定，如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gcc test.c -DDEBUG -o app</span><br></pre></td></tr></table></figure>
+<p>在 gcc/g++ 命令中通过参数 -D 指定出要定义的宏的名字，这样就相当于在代码中定义了一个宏，其名字为 DEBUG。</p>
+<p>在 CMake 中我们也可以做类似的事情，对应的命令叫做 add_definitions:</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_definitions</span>(-D宏名称)</span><br></pre></td></tr></table></figure>
+<p>针对于上面的源文件编写一个 CMakeLists.txt，内容如下：</p>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.0</span>)</span><br><span class="line"><span class="keyword">project</span>(<span class="keyword">TEST</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 自定义 DEBUG 宏</span></span><br><span class="line"><span class="keyword">add_definitions</span>(-DDEBUG)</span><br><span class="line"><span class="keyword">add_executable</span>(app ./<span class="keyword">test</span>.c)</span><br></pre></td></tr></table></figure>
+<p>通过这种方式，上述代码中的第八行日志就能够被输出出来了。</p>
+<h1 id="3-预定义宏"><a class="markdownIt-Anchor" href="#3-预定义宏">#</a> 3. 预定义宏</h1>
+<p>下面的列表中为大家整理了一些 CMake 中常用的宏：<br>
+宏 	功能<br>
+ PROJECT_SOURCE_DIR 	使用 cmake 命令后紧跟的目录，一般是工程的根目录<br>
+ PROJECT_BINARY_DIR 	执行 cmake 命令的目录<br>
+ CMAKE_CURRENT_SOURCE_DIR 	当前处理的 CMakeLists.txt 所在的路径<br>
+ CMAKE_CURRENT_BINARY_DIR 	target 编译目录<br>
+ EXECUTABLE_OUTPUT_PATH 	重新定义目标二进制可执行文件的存放位置<br>
+ LIBRARY_OUTPUT_PATH 	重新定义目标链接库文件的存放位置<br>
+ PROJECT_NAME 	返回通过 PROJECT 指令定义的项目名称<br>
+ CMAKE_BINARY_DIR 	项目实际构建路径，假设在 build 目录进行的构建，那么得到的就是这个目录的路径</p>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2026-10-10 17:33:12" itemprop="dateModified" datetime="2026-10-10T17:33:12+08:00">2026-10-10</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>tadylon <i class="ic i-at"><em>@</em></i>tadylon tech blog
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://tadylon.github.io/Code/CMake/Base/" title=" CMake Base ">http://tadylon.github.io/Code/CMake/Base/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/Math/Linear%20Algebra/Linear%20Algebra/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_6.png" title="Untitled">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3>Untitled</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/Code/CMake/Order/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_7.jpg" title=" CMake Order ">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3> CMake Order </h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-cmake%E6%A6%82%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text"> 1. CMake 概述</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-cmake%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">2.</span> <span class="toc-text"> 2. CMake 的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E6%B3%A8%E9%87%8A"><span class="toc-number">2.1.</span> <span class="toc-text"> 2.1 注释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211-%E6%B3%A8%E9%87%8A%E8%A1%8C"><span class="toc-number">2.1.1.</span> <span class="toc-text"> 2.1.1 注释行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-%E6%B3%A8%E9%87%8A%E5%9D%97"><span class="toc-number">2.1.2.</span> <span class="toc-text"> 2.1.2 注释块</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E5%8F%AA%E6%9C%89%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.</span> <span class="toc-text"> 2.1 只有源文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#211-%E5%85%B1%E5%A4%84%E4%B8%80%E5%AE%A4"><span class="toc-number">2.2.1.</span> <span class="toc-text"> 2.1.1 共处一室</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#212-vip-%E5%8C%85%E6%88%BF"><span class="toc-number">2.2.2.</span> <span class="toc-text"> 2.1.2 VIP 包房</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E7%A7%81%E4%BA%BA%E8%AE%A2%E5%88%B6"><span class="toc-number">2.3.</span> <span class="toc-text"> 2.2 私人订制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#221-%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">2.3.1.</span> <span class="toc-text"> 2.2.1 定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#222-%E6%8C%87%E5%AE%9A%E4%BD%BF%E7%94%A8%E7%9A%84c%E6%A0%87%E5%87%86"><span class="toc-number">2.3.2.</span> <span class="toc-text"> 2.2.2 指定使用的 C++ 标准</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#223-%E6%8C%87%E5%AE%9A%E8%BE%93%E5%87%BA%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-number">2.3.3.</span> <span class="toc-text"> 2.2.3 指定输出的路径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E6%90%9C%E7%B4%A2%E6%96%87%E4%BB%B6"><span class="toc-number">2.4.</span> <span class="toc-text"> 2.3 搜索文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#231-%E6%96%B9%E5%BC%8F1"><span class="toc-number">2.4.1.</span> <span class="toc-text"> 2.3.1 方式 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#232-%E6%96%B9%E5%BC%8F2"><span class="toc-number">2.4.2.</span> <span class="toc-text"> 2.3.2 方式 2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E5%8C%85%E5%90%AB%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-number">2.5.</span> <span class="toc-text"> 2.4 包含头文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#25-%E5%88%B6%E4%BD%9C%E5%8A%A8%E6%80%81%E5%BA%93%E6%88%96%E9%9D%99%E6%80%81%E5%BA%93"><span class="toc-number">2.6.</span> <span class="toc-text"> 2.5 制作动态库或静态库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#251-%E5%88%B6%E4%BD%9C%E9%9D%99%E6%80%81%E5%BA%93"><span class="toc-number">2.6.1.</span> <span class="toc-text"> 2.5.1 制作静态库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#252-%E5%88%B6%E4%BD%9C%E5%8A%A8%E6%80%81%E5%BA%93"><span class="toc-number">2.6.2.</span> <span class="toc-text"> 2.5.2 制作动态库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#253-%E6%8C%87%E5%AE%9A%E8%BE%93%E5%87%BA%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-number">2.6.3.</span> <span class="toc-text"> 2.5.3 指定输出的路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F1-%E9%80%82%E7%94%A8%E4%BA%8E%E5%8A%A8%E6%80%81%E5%BA%93"><span class="toc-number">2.6.3.1.</span> <span class="toc-text"> 方式 1 - 适用于动态库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E5%BC%8F2-%E9%83%BD%E9%80%82%E7%94%A8"><span class="toc-number">2.6.3.2.</span> <span class="toc-text"> 方式 2 - 都适用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#26-%E5%8C%85%E5%90%AB%E5%BA%93%E6%96%87%E4%BB%B6"><span class="toc-number">2.7.</span> <span class="toc-text"> 2.6 包含库文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#261-%E9%93%BE%E6%8E%A5%E9%9D%99%E6%80%81%E5%BA%93"><span class="toc-number">2.7.1.</span> <span class="toc-text"> 2.6.1 链接静态库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#262-%E9%93%BE%E6%8E%A5%E5%8A%A8%E6%80%81%E5%BA%93"><span class="toc-number">2.7.2.</span> <span class="toc-text"> 2.6.2 链接动态库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E7%B3%BB%E7%BB%9F%E5%8A%A8%E6%80%81%E5%BA%93"><span class="toc-number">2.7.2.1.</span> <span class="toc-text"> 链接系统动态库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E7%AC%AC%E4%B8%89%E6%96%B9%E5%8A%A8%E6%80%81%E5%BA%93"><span class="toc-number">2.7.2.2.</span> <span class="toc-text"> 链接第三方动态库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#263-%E6%80%BB%E7%BB%93"><span class="toc-number">2.7.3.</span> <span class="toc-text"> 2.6.3 总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#target_link_libraries"><span class="toc-number">2.7.3.1.</span> <span class="toc-text">  target_link_libraries</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#link_libraries"><span class="toc-number">2.7.3.2.</span> <span class="toc-text">  link_libraries</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#27-%E6%97%A5%E5%BF%97"><span class="toc-number">2.8.</span> <span class="toc-text"> 2.7 日志</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#28-%E5%8F%98%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">2.9.</span> <span class="toc-text"> 2.8 变量操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#281-%E8%BF%BD%E5%8A%A0"><span class="toc-number">2.9.1.</span> <span class="toc-text"> 2.8.1 追加</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8set%E6%8B%BC%E6%8E%A5"><span class="toc-number">2.9.1.1.</span> <span class="toc-text"> 使用 set  拼接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8list%E6%8B%BC%E6%8E%A5"><span class="toc-number">2.9.1.2.</span> <span class="toc-text"> 使用 list  拼接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#282-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%A7%BB%E9%99%A4"><span class="toc-number">2.9.2.</span> <span class="toc-text"> 2.8.2 字符串移除</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#29-%E5%AE%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">2.10.</span> <span class="toc-text"> 2.9 宏定义</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E9%A2%84%E5%AE%9A%E4%B9%89%E5%AE%8F"><span class="toc-number">3.</span> <span class="toc-text"> 3. 预定义宏</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="tadylon"
+      data-src="/images/avatar/avatar.png">
+  <p class="name" itemprop="name">tadylon</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">36</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1RhZHlsb24=" title="https:&#x2F;&#x2F;github.com&#x2F;Tadylon"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9FbnRodXNXaW5lNzU2MzI=" title="https:&#x2F;&#x2F;twitter.com&#x2F;EnthusWine75632"><i class="ic i-twitter"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/Math/Linear%20Algebra/Linear%20Algebra/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/Code/CMake/Order/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Finance/Part2%20Commercial%20Banks/" title=" Commercial Banks "> Commercial Banks </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Macroeconomics/Part3%20Microeconomics/" title=" Macroeconomics "> Macroeconomics </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Linear%20Algebra/Linear%20Algebra/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part5%20Factor%20Markets/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Financial/knowledge/" title=" Knowledge of Financial "> Knowledge of Financial </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Model/Shannon%20Entropy/" title=" Shannon Entropy "> Shannon Entropy </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Code/CMake/linker/" title=" CMake Linker "> CMake Linker </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part3%20Producer%20Behaviour/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part1%20Equilibrium%20Price/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part2%20Consumer%20Behaviour/" title="Untitled">Untitled</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">tadylon @ tadylon</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">91k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">1:23</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'Code/CMake/Base/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

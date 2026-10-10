@@ -1,0 +1,574 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="tadylon tech blog" href="http://tadylon.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="tadylon tech blog" href="http://tadylon.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="tadylon tech blog" href="http://tadylon.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+
+<link rel="canonical" href="http://tadylon.github.io/Code/CMake/Order/">
+
+
+<meta name="description" content="一下是一些常见的终端指令 1234567891011# 1. 创建并进入构建目录（防止污染源码）mkdir buildcd build# 2. 配置项目 (Configure)# 读取上一级目录的 CMakeLists.txt，生成 Makefile 或 VS 工程文件cmake ..# 3. 执行编译 (Build)# 这一步会调用底层的编译器（如 g++ 或 MSVC）生成 .execmake">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" CMake Order ">
+<meta property="og:url" content="http://tadylon.github.io/Code/CMake/Order/index.html">
+<meta property="og:site_name" content="tadylon tech blog">
+<meta property="og:description" content="一下是一些常见的终端指令 1234567891011# 1. 创建并进入构建目录（防止污染源码）mkdir buildcd build# 2. 配置项目 (Configure)# 读取上一级目录的 CMakeLists.txt，生成 Makefile 或 VS 工程文件cmake ..# 3. 执行编译 (Build)# 这一步会调用底层的编译器（如 g++ 或 MSVC）生成 .execmake">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-10-10T15:00:00.000Z">
+<meta property="article:modified_time" content="2026-10-10T09:33:43.708Z">
+<meta property="article:author" content="tadylon">
+<meta name="twitter:card" content="summary">
+
+
+  <title>
+ CMake Order  |
+tadylon = tadylon tech blog</title>
+<meta name="generator" content="Hexo 8.1.2"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline"> CMake Order 
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>1.2k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">tadylon</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="/img/background/background_8.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_3.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_9.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_13.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_15.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_1.png"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://tadylon.github.io/Code/CMake/Order/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar/avatar.png">
+    <meta itemprop="name" content="tadylon">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="tadylon tech blog">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>一下是一些常见的终端指令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 创建并进入构建目录（防止污染源码）</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 配置项目 (Configure)</span></span><br><span class="line"><span class="comment"># 读取上一级目录的 CMakeLists.txt，生成 Makefile 或 VS 工程文件</span></span><br><span class="line">cmake ..</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 执行编译 (Build)</span></span><br><span class="line"><span class="comment"># 这一步会调用底层的编译器（如 g++ 或 MSVC）生成 .exe</span></span><br><span class="line">cmake --build .</span><br></pre></td></tr></table></figure>
+<h4 id="指定生成器-generator"><a class="markdownIt-Anchor" href="#指定生成器-generator">#</a> 指定生成器 (Generator)</h4>
+<p>如果你电脑上同时装了 MinGW (g++) 和 Visual Studio，CMake 可能默认选错。你可以手动指定：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 MinGW 的 Makefile (使用 g++)</span></span><br><span class="line">cmake -G <span class="string">&quot;MinGW Makefiles&quot;</span> ..</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 Visual Studio 2022 工程</span></span><br><span class="line">cmake -G <span class="string">&quot;Visual Studio 17 2022&quot;</span> ..</span><br></pre></td></tr></table></figure>
+<h4 id="指定编译模式-debugrelease"><a class="markdownIt-Anchor" href="#指定编译模式-debugrelease">#</a> 指定编译模式 (Debug/Release)</h4>
+<ul>
+<li>
+<p><strong>Debug</strong>：包含调试信息，运行慢，方便找 Bug。</p>
+</li>
+<li>
+<p><strong>Release</strong>：优化性能，不含调试信息，文件小。</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在配置阶段指定</span></span><br><span class="line">cmake .. -DCMAKE_BUILD_TYPE=Release</span><br></pre></td></tr></table></figure>
+<h4 id="清理与重置"><a class="markdownIt-Anchor" href="#清理与重置">#</a> 清理与重置</h4>
+<p>如果修改了  <code>CMakeLists.txt</code>  发现没生效，或者想重新编译，最简单的办法是：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 build 文件夹内容（Windows CMD 命令）</span></span><br><span class="line">rd /s /q build</span><br><span class="line"><span class="built_in">mkdir</span> build</span><br></pre></td></tr></table></figure>
+<h3 id="实用小工具指令"><a class="markdownIt-Anchor" href="#实用小工具指令">#</a> 实用小工具指令</h3>
+<table>
+<thead>
+<tr>
+<th><strong>指令</strong></th>
+<th><strong>用途</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cmake --version</code></td>
+<td>查看当前安装的 CMake 版本。</td>
+</tr>
+<tr>
+<td><code>cmake --help</code></td>
+<td>查看所有支持的参数。</td>
+</tr>
+<tr>
+<td><code>cmake -L ..</code></td>
+<td>列出当前项目所有可配置的变量（比如路径、开关）。</td>
+</tr>
+<tr>
+<td><code>cmake --build . --target clean</code></td>
+<td>清理编译生成的中间文件，但不删除配置。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="最快捷的单条指令"><a class="markdownIt-Anchor" href="#最快捷的单条指令">#</a> 最快捷的单条指令</h3>
+<p>在项目的根目录下（即  <code>CMakeLists.txt</code>  所在的目录）运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -S . -B build</span><br></pre></td></tr></table></figure>
+<p><strong>参数解释：</strong></p>
+<ul>
+<li>
+<p><strong> <code>-S .</code> </strong>：指定源码（Source）目录为当前目录（ <code>.</code> ）。</p>
+</li>
+<li>
+<p><strong> <code>-B build</code> </strong>：指定构建（Build）目录为  <code>build</code> 。如果该目录不存在，CMake 会<strong>自动为你创建</strong>。</p>
+</li>
+</ul>
+<h3 id="紧接着的一键编译指令"><a class="markdownIt-Anchor" href="#紧接着的一键编译指令">#</a> 紧接着的一键编译指令</h3>
+<p>生成完解决方案（Makefile 或 .sln）后，你不需要进入  <code>build</code>  目录，直接在根目录执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake --build build</span><br></pre></td></tr></table></figure>
+<p>这行命令会自动去  <code>build</code>  文件夹里找生成的工程文件并开始编译。</p>
+<h3 id="如果你想更进一步指定编译器"><a class="markdownIt-Anchor" href="#如果你想更进一步指定编译器">#</a> 如果你想更进一步（指定编译器）</h3>
+<p>在 Windows 上，如果你电脑里装了多个编译器（比如既有 VS 又有 MinGW），建议在生成时指定生成器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 MinGW 的 Makefile (适合习惯命令行的人)</span></span><br><span class="line">cmake -S . -B build -G <span class="string">&quot;MinGW Makefiles&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者生成 VS 2022 的工程方案</span></span><br><span class="line">cmake -S . -B build -G <span class="string">&quot;Visual Studio 17 2022&quot;</span></span><br></pre></td></tr></table></figure>
+<p>以后你改了代码，只需要在根目录连着敲这两行：</p>
+<ol>
+<li>
+<p><strong>生成</strong>： <code>cmake -S . -B build</code></p>
+</li>
+<li>
+<p><strong>编译</strong>： <code>cmake --build build</code></p>
+</li>
+</ol>
+
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2026-10-10 17:33:43" itemprop="dateModified" datetime="2026-10-10T17:33:43+08:00">2026-10-10</time>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>tadylon <i class="ic i-at"><em>@</em></i>tadylon tech blog
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://tadylon.github.io/Code/CMake/Order/" title=" CMake Order ">http://tadylon.github.io/Code/CMake/Order/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/Code/CMake/Base/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_5.jpg" title=" CMake Base ">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3> CMake Base </h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/Code/CMake/Learning/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_9.jpg" title=" CMake Learning ">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> </span>
+  <h3> CMake Learning </h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%94%9F%E6%88%90%E5%99%A8-generator"><span class="toc-number">1.</span> <span class="toc-text"> 指定生成器 (Generator)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F-debugrelease"><span class="toc-number">2.</span> <span class="toc-text"> 指定编译模式 (Debug&#x2F;Release)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E4%B8%8E%E9%87%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text"> 清理与重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text"> 实用小工具指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%BF%AB%E6%8D%B7%E7%9A%84%E5%8D%95%E6%9D%A1%E6%8C%87%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text"> 最快捷的单条指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A7%E6%8E%A5%E7%9D%80%E7%9A%84%E4%B8%80%E9%94%AE%E7%BC%96%E8%AF%91%E6%8C%87%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text"> 紧接着的一键编译指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E6%9B%B4%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text"> 如果你想更进一步（指定编译器）</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="tadylon"
+      data-src="/images/avatar/avatar.png">
+  <p class="name" itemprop="name">tadylon</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">36</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL1RhZHlsb24=" title="https:&#x2F;&#x2F;github.com&#x2F;Tadylon"><i class="ic i-github"></i></span>
+      <span class="exturl item twitter" data-url="aHR0cHM6Ly90d2l0dGVyLmNvbS9FbnRodXNXaW5lNzU2MzI=" title="https:&#x2F;&#x2F;twitter.com&#x2F;EnthusWine75632"><i class="ic i-twitter"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>Archives</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>Tags</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>Categories</a>
+  </li>
+
+    
+  <li class="item">
+    <a href="/about/" rel="section"><i class="ic i-user"></i>About</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/Code/CMake/Base/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/Code/CMake/Learning/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Macroeconomics/Part6%20Economics%20Growth/" title=" Economic Growth "> Economic Growth </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Finance/Part2%20Commercial%20Banks/" title=" Commercial Banks "> Commercial Banks </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part5%20Factor%20Markets/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part1%20Equilibrium%20Price/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Code/CMake/Learning/" title=" CMake Learning "> CMake Learning </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Model/Fourier%20Transform/" title=" Fourier Transform "> Fourier Transform </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part4%20Market%20Structure/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Code/CMake/Order/" title=" CMake Order "> CMake Order </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Linear%20Algebra/Linear%20Algebra/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Calculus/Divergence/" title=" Divergence Theorem "> Divergence Theorem </a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">tadylon @ tadylon</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="Symbols count total">91k words</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="Reading time total">1:23</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: 'Code/CMake/Order/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
