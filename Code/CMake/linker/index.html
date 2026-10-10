@@ -28,12 +28,12 @@
 <link rel="canonical" href="http://tadylon.github.io/Code/CMake/linker/">
 
 
-<meta name="description" content="# 一、基本概念 # 静态链接 将库的代码直接编译到最终的可执行文件中，生成一个完整的、独立的程序。 # 动态链接 库的代码在运行时才加载到内存中，可执行文件只包含对库的引用。 # 二、两种链接方式的对比    特性 静态链接 动态链接     文件大小 较大，包含所有库代码 较小，只有引用   内存占用 每个程序独立占用 多个程序可共享   部署难度 简单，单个文件 需要确保系统有对应库   更">
+<meta name="description" content="一、基本概念 静态链接 将库的代码直接编译到最终的可执行文件中，生成一个完整的、独立的程序。 动态链接 库的代码在运行时才加载到内存中，可执行文件只包含对库的引用。 二、两种链接方式的对比    特性 静态链接 动态链接     文件大小 较大，包含所有库代码 较小，只有引用   内存占用 每个程序独立占用 多个程序可共享   部署难度 简单，单个文件 需要确保系统有对应库   更新库 需要重新编">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" CMake Linker ">
 <meta property="og:url" content="http://tadylon.github.io/Code/CMake/linker/index.html">
 <meta property="og:site_name" content="tadylon tech blog">
-<meta property="og:description" content="# 一、基本概念 # 静态链接 将库的代码直接编译到最终的可执行文件中，生成一个完整的、独立的程序。 # 动态链接 库的代码在运行时才加载到内存中，可执行文件只包含对库的引用。 # 二、两种链接方式的对比    特性 静态链接 动态链接     文件大小 较大，包含所有库代码 较小，只有引用   内存占用 每个程序独立占用 多个程序可共享   部署难度 简单，单个文件 需要确保系统有对应库   更">
+<meta property="og:description" content="一、基本概念 静态链接 将库的代码直接编译到最终的可执行文件中，生成一个完整的、独立的程序。 动态链接 库的代码在运行时才加载到内存中，可执行文件只包含对库的引用。 二、两种链接方式的对比    特性 静态链接 动态链接     文件大小 较大，包含所有库代码 较小，只有引用   内存占用 每个程序独立占用 多个程序可共享   部署难度 简单，单个文件 需要确保系统有对应库   更新库 需要重新编">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-10-10T15:00:00.000Z">
 <meta property="article:modified_time" content="2026-10-10T09:33:35.945Z">
@@ -127,12 +127,12 @@ tadylon = tadylon tech blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
+          <li class="item" data-background-image="/img/background/background_7.jpg"></li>
           <li class="item" data-background-image="/img/background/background_11.png"></li>
+          <li class="item" data-background-image="/img/background/background_15.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_4.png"></li>
           <li class="item" data-background-image="/img/background/background_6.png"></li>
-          <li class="item" data-background-image="/img/background/background_12.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_2.jpg"></li>
           <li class="item" data-background-image="/img/background/background_1.png"></li>
-          <li class="item" data-background-image="/img/background/background_13.jpg"></li>
         </ul>
       </div>
     </header>
@@ -176,12 +176,12 @@ tadylon = tadylon tech blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="一-基本概念"><a class="markdownIt-Anchor" href="#一-基本概念">#</a> 一、基本概念</h2>
-<h3 id="静态链接"><a class="markdownIt-Anchor" href="#静态链接">#</a> 静态链接</h3>
+    <h2 id="一、基本概念">一、基本概念</h2>
+<h3 id="静态链接">静态链接</h3>
 <p>将库的代码直接编译到最终的可执行文件中，生成一个完整的、独立的程序。</p>
-<h3 id="动态链接"><a class="markdownIt-Anchor" href="#动态链接">#</a> 动态链接</h3>
+<h3 id="动态链接">动态链接</h3>
 <p>库的代码在运行时才加载到内存中，可执行文件只包含对库的引用。</p>
-<h2 id="二-两种链接方式的对比"><a class="markdownIt-Anchor" href="#二-两种链接方式的对比">#</a> 二、两种链接方式的对比</h2>
+<h2 id="二、两种链接方式的对比">二、两种链接方式的对比</h2>
 <table>
 <thead>
 <tr>
@@ -223,14 +223,14 @@ tadylon = tadylon tech blog</title>
 </tr>
 </tbody>
 </table>
-<h2 id="三-cmake中的配置方法"><a class="markdownIt-Anchor" href="#三-cmake中的配置方法">#</a> 三、CMake 中的配置方法</h2>
-<h2 id="创建库"><a class="markdownIt-Anchor" href="#创建库">#</a> 创建库</h2>
+<h2 id="三、CMake中的配置方法">三、CMake中的配置方法</h2>
+<h2 id="创建库">创建库</h2>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 静态库</span></span><br><span class="line"><span class="keyword">add_library</span>(mylib_static STATIC</span><br><span class="line">    src/file1.cpp</span><br><span class="line">    src/file2.cpp</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态库</span></span><br><span class="line"><span class="keyword">add_library</span>(mylib_shared SHARED</span><br><span class="line">    src/file1.cpp</span><br><span class="line">    src/file2.cpp</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<h3 id="链接库到可执行文件"><a class="markdownIt-Anchor" href="#链接库到可执行文件">#</a> 链接库到可执行文件</h3>
+<h3 id="链接库到可执行文件">链接库到可执行文件</h3>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(myapp main.cpp)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接静态库（优先静态）</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp PRIVATE mylib_static)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 链接动态库（优先动态）</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp PRIVATE mylib_shared)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 默认链接（由CMAKE_FIND_LIBRARY_SUFFIXES决定）</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp PRIVATE mylib)</span><br></pre></td></tr></table></figure>
-<h2 id="静态链接文件"><a class="markdownIt-Anchor" href="#静态链接文件">#</a> 静态链接文件</h2>
-<h3 id="主要类型lib-文件静态库"><a class="markdownIt-Anchor" href="#主要类型lib-文件静态库">#</a> 主要类型： <code>.lib</code>  文件（静态库）</h3>
-<p>这是 Windows 下的标准静态库文件，直接包含目标代码。</p>
+<h2 id="静态链接文件">静态链接文件</h2>
+<h3 id="主要类型：-lib-文件（静态库）">主要类型：<code>.lib</code> 文件（静态库）</h3>
+<p>这是Windows下的标准静态库文件，直接包含目标代码。</p>
 <p><strong>特点：</strong></p>
 <ul>
 <li>
@@ -243,28 +243,28 @@ tadylon = tadylon tech blog</title>
 <p>文件通常较大</p>
 </li>
 <li>
-<p>使用  <code>add_library(foo STATIC ...)</code>  生成</p>
+<p>使用 <code>add_library(foo STATIC ...)</code> 生成</p>
 </li>
 </ul>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(mylib STATIC src/library.cpp)</span><br><span class="line"><span class="comment"># 生成: mylib.lib</span></span><br></pre></td></tr></table></figure>
-<h3 id="静态库的-libstatic"><a class="markdownIt-Anchor" href="#静态库的-libstatic">#</a> 静态库的  <code>.lib</code> （STATIC）</h3>
+<h3 id="静态库的-lib（STATIC）">静态库的 <code>.lib</code>（STATIC）</h3>
 <p><strong>运行时不需要，但分发时可能需要（取决于你的分发形式）</strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">add_library</span>(mylib STATIC src/code.cpp)  <span class="comment"># 生成 mylib.lib</span></span><br><span class="line"><span class="keyword">add_executable</span>(myapp main.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp PRIVATE mylib)</span><br></pre></td></tr></table></figure>
 <p><strong>编译完成后：</strong></p>
 <ul>
 <li>
-<p>✅ 代码已完整嵌入  <code>myapp.exe</code></p>
+<p>✅ 代码已完整嵌入 <code>myapp.exe</code></p>
 </li>
 <li>
-<p>❌ 运行  <code>myapp.exe</code>  <strong>不需要</strong>  <code>mylib.lib</code></p>
+<p>❌ 运行 <code>myapp.exe</code> <strong>不需要</strong> <code>mylib.lib</code></p>
 </li>
 <li>
-<p>⚠️ 但如果你要<strong>重新编译</strong>或<strong>让其他人链接你的库</strong>，就需要保留这个  <code>.lib</code></p>
+<p>⚠️ 但如果你要<strong>重新编译</strong>或<strong>让其他人链接你的库</strong>，就需要保留这个 <code>.lib</code></p>
 </li>
 </ul>
-<h2 id="动态链接文件"><a class="markdownIt-Anchor" href="#动态链接文件">#</a> 动态链接文件</h2>
-<p>动态链接在 Windows 下涉及<strong>两个文件</strong>：</p>
-<h3 id="1-dll-文件dynamic-link-library"><a class="markdownIt-Anchor" href="#1-dll-文件dynamic-link-library">#</a> 1.  <code>.dll</code>  文件（Dynamic Link Library）</h3>
+<h2 id="动态链接文件">动态链接文件</h2>
+<p>动态链接在Windows下涉及<strong>两个文件</strong>：</p>
+<h3 id="1-dll-文件（Dynamic-Link-Library）">1. <code>.dll</code> 文件（Dynamic Link Library）</h3>
 <ul>
 <li>
 <p><strong>运行时必需</strong>的真正动态库</p>
@@ -276,7 +276,7 @@ tadylon = tadylon tech blog</title>
 <p>程序运行时加载到内存</p>
 </li>
 </ul>
-<h3 id="2-lib-文件导入库import-library"><a class="markdownIt-Anchor" href="#2-lib-文件导入库import-library">#</a> 2.  <code>.lib</code>  文件（导入库 / Import Library）</h3>
+<h3 id="2-lib-文件（导入库-Import-Library）">2. <code>.lib</code> 文件（导入库/Import Library）</h3>
 <ul>
 <li>
 <p><strong>编译链接时使用</strong>的导入库</p>
@@ -285,27 +285,27 @@ tadylon = tadylon tech blog</title>
 <p>与静态库同名但内容完全不同</p>
 </li>
 <li>
-<p>仅包含 DLL 中导出符号的存根（stub）信息</p>
+<p>仅包含DLL中导出符号的存根（stub）信息</p>
 </li>
 <li>
-<p>告诉链接器如何找到 DLL 中的函数</p>
+<p>告诉链接器如何找到DLL中的函数</p>
 </li>
 </ul>
-<p><strong>这是 Windows 特有的设计</strong>：同名  <code>.lib</code>  文件根据生成方式不同，内容完全不同。</p>
+<p><strong>这是Windows特有的设计</strong>：同名 <code>.lib</code> 文件根据生成方式不同，内容完全不同。</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(mylib SHARED src/library.cpp)</span><br><span class="line"><span class="comment"># 生成两个文件: mylib.dll（运行时） + mylib.lib（导入库）</span></span><br></pre></td></tr></table></figure>
-<h3 id="动态库的-lib导入库shared"><a class="markdownIt-Anchor" href="#动态库的-lib导入库shared">#</a> 动态库的  <code>.lib</code> （导入库 / SHARED）</h3>
-<p><strong>编译完成后不需要  <code>.lib</code> ，但必须要有  <code>.dll</code> </strong></p>
+<h3 id="动态库的-lib（导入库-SHARED）">动态库的 <code>.lib</code>（导入库/SHARED）</h3>
+<p><strong>编译完成后不需要 <code>.lib</code>，但必须要有 <code>.dll</code></strong></p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">add_library</span>(mydll SHARED src/code.cpp)  <span class="comment"># 生成 mydll.lib + mydll.dll</span></span><br><span class="line"><span class="keyword">add_executable</span>(myapp main.cpp)</span><br><span class="line"><span class="keyword">target_link_libraries</span>(myapp PRIVATE mydll)</span><br></pre></td></tr></table></figure>
 <p><strong>编译完成后：</strong></p>
 <ul>
 <li>
-<p>❌ <strong>不需要</strong>  <code>mydll.lib</code>  - 导入库只用于编译链接阶段</p>
+<p>❌ <strong>不需要</strong> <code>mydll.lib</code> - 导入库只用于编译链接阶段</p>
 </li>
 <li>
-<p>✅ <strong>必须要有</strong>  <code>mydll.dll</code>  - 运行时动态加载这个</p>
+<p>✅ <strong>必须要有</strong> <code>mydll.dll</code> - 运行时动态加载这个</p>
 </li>
 </ul>
-<h3 id="文件对比总结"><a class="markdownIt-Anchor" href="#文件对比总结">#</a> 文件对比总结</h3>
+<h3 id="文件对比总结">文件对比总结</h3>
 <table>
 <thead>
 <tr>
@@ -328,8 +328,8 @@ tadylon = tadylon tech blog</title>
 <td>导入库</td>
 <td><code>.lib</code></td>
 <td>编译时</td>
-<td>DLL 符号存根</td>
-<td>否，需.dll 配合</td>
+<td>DLL符号存根</td>
+<td>否，需.dll配合</td>
 </tr>
 <tr>
 <td>动态库</td>
@@ -339,40 +339,39 @@ tadylon = tadylon tech blog</title>
 <td>是（运行时）</td>
 </tr>
 </tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>需要.lib吗？</th>
+<th>需要.dll吗？</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>场景</td>
-<td>需要.lib 吗？</td>
-<td>需要.dll 吗？</td>
-</tr>
-<tr>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-</tr>
-<tr>
-<td>自己编译 exe（静态链接）</td>
+<td>自己编译exe（静态链接）</td>
 <td>编译时需要</td>
 <td>永远不需要</td>
 </tr>
 <tr>
-<td>自己编译 exe（动态链接）</td>
+<td>自己编译exe（动态链接）</td>
 <td>编译时需要</td>
 <td>运行时需要</td>
 </tr>
 <tr>
-<td>分发 exe（静态链接）</td>
+<td>分发exe（静态链接）</td>
 <td>不需要</td>
 <td>不需要</td>
 </tr>
 <tr>
-<td>分发 exe（动态链接）</td>
+<td>分发exe（动态链接）</td>
 <td>不需要</td>
 <td><strong>需要</strong></td>
 </tr>
 <tr>
-<td>提供 SDK 给别人开发用</td>
-<td>需要（两种.lib 都要）</td>
+<td>提供SDK给别人开发用</td>
+<td>需要（两种.lib都要）</td>
 <td>如果动态链接还需要.dll</td>
 </tr>
 <tr>
@@ -425,20 +424,20 @@ tadylon = tadylon tech blog</title>
     <div class="item left">
       
 
-  <a href="/Code/CMake/Learning/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_4.png" title=" CMake Learning ">
+  <a href="/Code/CMake/Order/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_10.jpg" title=" CMake Order ">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3> CMake Learning </h3>
+  <h3> CMake Order </h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/Code/Git/learning/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_5.jpg" title=" Git Learning ">
+  <a href="/Code/CMake/Learning/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_14.jpg" title=" CMake Learning ">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3> Git Learning </h3>
+  <h3> CMake Learning </h3>
   </a>
 
     </div>
@@ -457,7 +456,7 @@ tadylon = tadylon tech blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text"> 一、基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.1.</span> <span class="toc-text"> 静态链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.2.</span> <span class="toc-text"> 动态链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E4%B8%A4%E7%A7%8D%E9%93%BE%E6%8E%A5%E6%96%B9%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">2.</span> <span class="toc-text"> 二、两种链接方式的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-cmake%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text"> 三、CMake 中的配置方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%BA%93"><span class="toc-number">4.</span> <span class="toc-text"> 创建库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%BA%93%E5%88%B0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text"> 链接库到可执行文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text"> 静态链接文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%B1%BB%E5%9E%8Blib-%E6%96%87%E4%BB%B6%E9%9D%99%E6%80%81%E5%BA%93"><span class="toc-number">5.1.</span> <span class="toc-text"> 主要类型： .lib  文件（静态库）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%BA%93%E7%9A%84-libstatic"><span class="toc-number">5.2.</span> <span class="toc-text"> 静态库的  .lib （STATIC）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text"> 动态链接文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-dll-%E6%96%87%E4%BB%B6dynamic-link-library"><span class="toc-number">6.1.</span> <span class="toc-text"> 1.  .dll  文件（Dynamic Link Library）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-lib-%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5%E5%BA%93import-library"><span class="toc-number">6.2.</span> <span class="toc-text"> 2.  .lib  文件（导入库 &#x2F; Import Library）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%BA%93%E7%9A%84-lib%E5%AF%BC%E5%85%A5%E5%BA%93shared"><span class="toc-number">6.3.</span> <span class="toc-text"> 动态库的  .lib （导入库 &#x2F; SHARED）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="toc-number">6.4.</span> <span class="toc-text"> 文件对比总结</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">一、基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.1.</span> <span class="toc-text">静态链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.2.</span> <span class="toc-text">动态链接</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E4%B8%A4%E7%A7%8D%E9%93%BE%E6%8E%A5%E6%96%B9%E5%BC%8F%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-number">2.</span> <span class="toc-text">二、两种链接方式的对比</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81CMake%E4%B8%AD%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">三、CMake中的配置方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%BA%93"><span class="toc-number">4.</span> <span class="toc-text">创建库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5%E5%BA%93%E5%88%B0%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6"><span class="toc-number">4.1.</span> <span class="toc-text">链接库到可执行文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">5.</span> <span class="toc-text">静态链接文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%B1%BB%E5%9E%8B%EF%BC%9A-lib-%E6%96%87%E4%BB%B6%EF%BC%88%E9%9D%99%E6%80%81%E5%BA%93%EF%BC%89"><span class="toc-number">5.1.</span> <span class="toc-text">主要类型：.lib 文件（静态库）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%BA%93%E7%9A%84-lib%EF%BC%88STATIC%EF%BC%89"><span class="toc-number">5.2.</span> <span class="toc-text">静态库的 .lib（STATIC）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6"><span class="toc-number">6.</span> <span class="toc-text">动态链接文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-dll-%E6%96%87%E4%BB%B6%EF%BC%88Dynamic-Link-Library%EF%BC%89"><span class="toc-number">6.1.</span> <span class="toc-text">1. .dll 文件（Dynamic Link Library）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-lib-%E6%96%87%E4%BB%B6%EF%BC%88%E5%AF%BC%E5%85%A5%E5%BA%93-Import-Library%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">2. .lib 文件（导入库&#x2F;Import Library）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%BA%93%E7%9A%84-lib%EF%BC%88%E5%AF%BC%E5%85%A5%E5%BA%93-SHARED%EF%BC%89"><span class="toc-number">6.3.</span> <span class="toc-text">动态库的 .lib（导入库&#x2F;SHARED）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%AF%B9%E6%AF%94%E6%80%BB%E7%BB%93"><span class="toc-number">6.4.</span> <span class="toc-text">文件对比总结</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -519,12 +518,12 @@ tadylon = tadylon tech blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/Code/CMake/Learning/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/Code/CMake/Order/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/Code/Git/learning/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/Code/CMake/Learning/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -548,7 +547,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Math/Calculus/Divergence/" title=" Divergence Theorem "> Divergence Theorem </a></span>
+    <span><a href="/Economic/Microeconomics/Part4%20Market%20Structure/" title="Untitled">Untitled</a></span>
   </li>
 
       
@@ -557,61 +556,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Math/Model/Shannon%20Entropy/" title=" Shannon Entropy "> Shannon Entropy </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Microeconomics/Part6%20Welfare%20Economics/" title="Untitled">Untitled</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" title=" National Income Accounts "> National Income Accounts </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Math/Probability/Probability/" title=" Probability Overview "> Probability Overview </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Math/Model/Monte-Carlo%20Simulation/" title=" Monte Carlo Simulation "> Monte Carlo Simulation </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Code/CMake/linker/" title=" CMake Linker "> CMake Linker </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" title=" Fiscal and Monetary Policy "> Fiscal and Monetary Policy </a></span>
+    <span><a href="/Code/CMake/Learning/" title=" CMake Learning "> CMake Learning </a></span>
   </li>
 
       
@@ -629,7 +574,61 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Macroeconomics/Part3%20Microeconomics/" title=" Macroeconomics "> Macroeconomics </a></span>
+    <span><a href="/Economic/Microeconomics/Part5%20Factor%20Markets/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Finance/Part3%20Central%20Banks%20and%20Financial%20Regulation/" title=" Central Banks and Financial Regulation "> Central Banks and Financial Regulation </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Finance/Part1%20Financial%20Markets/" title=" Financial Markets "> Financial Markets </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Calculus/Calculus/" title=" Calculus "> Calculus </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Finance/Part6%20Open%20Economy/" title=" Open Economy "> Open Economy </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part1%20Equilibrium%20Price/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" title=" Fiscal and Monetary Policy "> Fiscal and Monetary Policy </a></span>
   </li>
 
   </ul>
@@ -654,13 +653,13 @@ tadylon = tadylon tech blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">91k words</span>
+    <span title="Symbols count total">94k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:23</span>
+    <span title="Reading time total">1:26</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
