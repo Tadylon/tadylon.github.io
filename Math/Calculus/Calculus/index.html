@@ -28,15 +28,15 @@
 <link rel="canonical" href="http://tadylon.github.io/Math/Calculus/Calculus/">
 
 
-<meta name="description" content="# Calculus 微积分基本定理 若 fff 在 [a,b][a,b][a,b] 上连续，定义 F(x)&#x3D;∫axf(t) dtF(x) &#x3D; \int_a^x f(t)\,dt F(x)&#x3D;∫ax​f(t)dt 则 FFF 可导，且 F′(x)&#x3D;f(x)F^′(x) &#x3D; f(x) F′(x)&#x3D;f(x) 若 F′(x)&#x3D;f(x)F^′(x) &#x3D; f(x)F′(x)&#x3D;f(x)，则 ∫abf(x) dx">
+<meta name="description" content="Calculus 微积分基本定理 若 fff 在 [a,b][a,b][a,b] 上连续，定义 F(x)&#x3D;∫axf(t) dtF(x) &#x3D; \int_a^x f(t)\,dt F(x)&#x3D;∫ax​f(t)dt 则 FFF 可导，且 F^&#x27;(x) &#x3D; f(x)  若 F^&#x27;(x) &#x3D; f(x)，则 ∫abf(x) dx&#x3D;F(b)−F(a)\int_a^b f(x)\,dx &#x3D; F(">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" Calculus ">
 <meta property="og:url" content="http://tadylon.github.io/Math/Calculus/Calculus/index.html">
 <meta property="og:site_name" content="tadylon tech blog">
-<meta property="og:description" content="# Calculus 微积分基本定理 若 fff 在 [a,b][a,b][a,b] 上连续，定义 F(x)&#x3D;∫axf(t) dtF(x) &#x3D; \int_a^x f(t)\,dt F(x)&#x3D;∫ax​f(t)dt 则 FFF 可导，且 F′(x)&#x3D;f(x)F^′(x) &#x3D; f(x) F′(x)&#x3D;f(x) 若 F′(x)&#x3D;f(x)F^′(x) &#x3D; f(x)F′(x)&#x3D;f(x)，则 ∫abf(x) dx">
+<meta property="og:description" content="Calculus 微积分基本定理 若 fff 在 [a,b][a,b][a,b] 上连续，定义 F(x)&#x3D;∫axf(t) dtF(x) &#x3D; \int_a^x f(t)\,dt F(x)&#x3D;∫ax​f(t)dt 则 FFF 可导，且 F^&#x27;(x) &#x3D; f(x)  若 F^&#x27;(x) &#x3D; f(x)，则 ∫abf(x) dx&#x3D;F(b)−F(a)\int_a^b f(x)\,dx &#x3D; F(">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-10-10T15:00:00.000Z">
-<meta property="article:modified_time" content="2026-10-10T09:34:48.859Z">
+<meta property="article:modified_time" content="2026-10-10T11:04:20.364Z">
 <meta property="article:author" content="tadylon">
 <meta name="twitter:card" content="summary">
 
@@ -86,7 +86,7 @@ tadylon = tadylon tech blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>230</span>
+    <span>199</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -127,12 +127,12 @@ tadylon = tadylon tech blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="/img/background/background_2.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_7.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_1.png"></li>
-          <li class="item" data-background-image="/img/background/background_12.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_3.jpg"></li>
           <li class="item" data-background-image="/img/background/background_11.png"></li>
+          <li class="item" data-background-image="/img/background/background_10.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_5.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_2.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_1.png"></li>
+          <li class="item" data-background-image="/img/background/background_8.jpg"></li>
         </ul>
       </div>
     </header>
@@ -176,17 +176,18 @@ tadylon = tadylon tech blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h2 id="calculus"><a class="markdownIt-Anchor" href="#calculus">#</a> Calculus</h2>
+    <h2 id="Calculus">Calculus</h2>
 <p>微积分基本定理</p>
-<p>若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span></span></span></span> 在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">b</span><span class="mclose">]</span></span></span></span> 上连续，定义</p>
+<p>若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span></span></span></span> 在 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal">a</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">b</span><span class="mclose">]</span></span></span></span> 上连续，定义</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>F</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mo>∫</mo><mi>a</mi><mi>x</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mtext> </mtext><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">F(x) = \int_a^x f(t)\,dt
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.3262420000000006em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4142920000000005em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span><span style="top:-3.812900000000001em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">t</span></span></span></span></span></p>
-<p>则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span></span></span></span> 可导，且</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msup><mi>F</mi><mtext>′</mtext></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F^′(x) = f(x)
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.051892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span></span></p>
-<p>若 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>F</mi><mtext>′</mtext></msup><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mo>=</mo><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">F^′(x) = f(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span>，则</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mtext>−</mtext><mi>F</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\int_a^b f(x)\,dx = F(b) − F(a)
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:2.5109580000000005em;vertical-align:-0.9119499999999999em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.5990080000000004em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span><span style="top:-3.812900000000001em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119499999999999em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mord">−</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></span></p>
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:2.3262em;vertical-align:-0.9119em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.4445em;position:relative;top:-0.0011em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.4143em;"><span style="top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span><span style="top:-3.8129em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">x</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">t</span></span></span></span></span></p>
+<p>则 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span></span></span></span> 可导，且</p>
+<p><span class="katex-error" title="ParseError: KaTeX parse error: Expected group after &#x27;^&#x27; at position 2: F^̲&#x27;(x) = f(x)
+" style="color:#cc0000">F^&#x27;(x) = f(x)
+</span></p>
+<p>若 <span class="katex-error" title="ParseError: KaTeX parse error: Expected group after &#x27;^&#x27; at position 2: F^̲&#x27;(x) = f(x)" style="color:#cc0000">F^&#x27;(x) = f(x)</span>，则</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo><mtext> </mtext><mi>d</mi><mi>x</mi><mo>=</mo><mi>F</mi><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo><mo>−</mo><mi>F</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\int_a^b f(x)\,dx = F(b) - F(a)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:2.511em;vertical-align:-0.9119em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.4445em;position:relative;top:-0.0011em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.599em;"><span style="top:-1.7881em;margin-left:-0.4445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span><span style="top:-3.8129em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="katex-sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">b</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.9119em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.1076em;">f</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal">d</span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">b</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.1389em;">F</span><span class="mopen">(</span><span class="mord mathnormal">a</span><span class="mclose">)</span></span></span></span></span></p>
 
   </div>
 
@@ -198,7 +199,7 @@ tadylon = tadylon tech blog</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">Edited on</span>
-    <time title="Modified: 2026-10-10 17:34:48" itemprop="dateModified" datetime="2026-10-10T17:34:48+08:00">2026-10-10</time>
+    <time title="Modified: 2026-10-10 19:04:20" itemprop="dateModified" datetime="2026-10-10T19:04:20+08:00">2026-10-10</time>
   </span>
 </div>
 
@@ -230,7 +231,7 @@ tadylon = tadylon tech blog</title>
     <div class="item left">
       
 
-  <a href="/Math/Calculus/Divergence/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_14.jpg" title=" Divergence Theorem ">
+  <a href="/Math/Calculus/Divergence/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_1.png" title=" Divergence Theorem ">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3> Divergence Theorem </h3>
@@ -240,10 +241,10 @@ tadylon = tadylon tech blog</title>
     <div class="item right">
       
 
-  <a href="/Code/CMake/linker/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_14.jpg" title=" CMake Linker ">
+  <a href="/Economic/Finance/Part5%20International%20Capital%20Flows/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_13.jpg" title=" International Capital Flows ">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3> CMake Linker </h3>
+  <h3> International Capital Flows </h3>
   </a>
 
     </div>
@@ -262,7 +263,7 @@ tadylon = tadylon tech blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#calculus"><span class="toc-number">1.</span> <span class="toc-text"> Calculus</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Calculus"><span class="toc-number">1.</span> <span class="toc-text">Calculus</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -329,7 +330,7 @@ tadylon = tadylon tech blog</title>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/Code/CMake/linker/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/Economic/Finance/Part5%20International%20Capital%20Flows/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -353,7 +354,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Math/Model/Fourier%20Transform/" title=" Fourier Transform "> Fourier Transform </a></span>
+    <span><a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" title=" Fiscal and Monetary Policy "> Fiscal and Monetary Policy </a></span>
   </li>
 
       
@@ -362,16 +363,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Macroeconomics/Part6%20Economics%20Growth/" title=" Economic Growth "> Economic Growth </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Math/Calculus/Calculus/" title=" Calculus "> Calculus </a></span>
+    <span><a href="/Math/Calculus/Divergence/" title=" Divergence Theorem "> Divergence Theorem </a></span>
   </li>
 
       
@@ -389,7 +381,34 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" title=" Fiscal and Monetary Policy "> Fiscal and Monetary Policy </a></span>
+    <span><a href="/Economic/Microeconomics/Part2%20Consumer%20Behaviour/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Probability/Base/" title=" Probability Basics "> Probability Basics </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Linear%20Algebra/Linear%20Algebra/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Code/CMake/Learning/" title=" CMake Learning "> CMake Learning </a></span>
   </li>
 
       
@@ -407,7 +426,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Macroeconomics/Part2%20Models/" title=" Models "> Models </a></span>
+    <span><a href="/Economic/Finance/Part7%20Financial%20Derivatives/" title=" Financial Derivatives "> Financial Derivatives </a></span>
   </li>
 
       
@@ -416,25 +435,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Macroeconomics/Part7%20Unemployment%20&%20Inflation/" title=" Unemployment and Inflation "> Unemployment and Inflation </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Microeconomics/Part2%20Consumer%20Behaviour/" title="Untitled">Untitled</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Macroeconomics/Part5%20Exchange%20Rate/" title=" Exchange Rate "> Exchange Rate </a></span>
+    <span><a href="/Economic/Microeconomics/Part1%20Equilibrium%20Price/" title="Untitled">Untitled</a></span>
   </li>
 
   </ul>
@@ -459,13 +460,13 @@ tadylon = tadylon tech blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">91k words</span>
+    <span title="Symbols count total">99k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:23</span>
+    <span title="Reading time total">1:30</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

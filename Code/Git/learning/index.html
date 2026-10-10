@@ -127,12 +127,12 @@ tadylon = tadylon tech blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="/img/background/background_13.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_10.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_14.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_5.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_11.png"></li>
-          <li class="item" data-background-image="/img/background/background_4.png"></li>
+          <li class="item" data-background-image="/img/background/background_2.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_3.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_6.png"></li>
+          <li class="item" data-background-image="/img/background/background_12.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_9.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_8.jpg"></li>
         </ul>
       </div>
     </header>
@@ -208,66 +208,66 @@ tadylon = tadylon tech blog</title>
 </tr>
 </tbody>
 </table>
-<h1 id="正式工作流的需要记住的指令"><a class="markdownIt-Anchor" href="#正式工作流的需要记住的指令">#</a> 正式工作流的需要记住的指令</h1>
-<h4 id="初始化仓库"><a class="markdownIt-Anchor" href="#初始化仓库">#</a> 初始化仓库</h4>
+<h1>正式工作流的需要记住的指令</h1>
+<h4 id="初始化仓库">初始化仓库</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
-<h4 id="查看工作区和暂存区的状态哪些文件被修改-新增或删除"><a class="markdownIt-Anchor" href="#查看工作区和暂存区的状态哪些文件被修改-新增或删除">#</a> 查看工作区和暂存区的状态（哪些文件被修改、新增或删除）</h4>
+<h4 id="查看工作区和暂存区的状态（哪些文件被修改、新增或删除）">查看工作区和暂存区的状态（哪些文件被修改、新增或删除）</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-<h4 id="将文件的更改添加到暂存区准备提交"><a class="markdownIt-Anchor" href="#将文件的更改添加到暂存区准备提交">#</a> 将文件的更改添加到<strong>暂存区</strong>，准备提交</h4>
+<h4 id="将文件的更改添加到暂存区，准备提交">将文件的更改添加到<strong>暂存区</strong>，准备提交</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line"></span><br><span class="line">或者是使用单独的添加到暂放区</span><br><span class="line">git add &lt;file_name&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="将暂存区的更改正式提交到本地仓库并附上提交说明"><a class="markdownIt-Anchor" href="#将暂存区的更改正式提交到本地仓库并附上提交说明">#</a> 将暂存区的更改正式<strong>提交</strong>到本地仓库，并附上提交说明</h4>
+<h4 id="将暂存区的更改正式提交到本地仓库，并附上提交说明">将暂存区的更改正式<strong>提交</strong>到本地仓库，并附上提交说明</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">&quot;description&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="跳过-git-add-步骤自动把所有已被跟踪的文件的更改添加到暂存区并提交新文件仍需-add"><a class="markdownIt-Anchor" href="#跳过-git-add-步骤自动把所有已被跟踪的文件的更改添加到暂存区并提交新文件仍需-add">#</a> 跳过  <code>git add</code>  步骤，自动把所有<strong>已被跟踪</strong>的文件的更改添加到暂存区并提交（新文件仍需  <code>add</code> ）</h4>
+<h4 id="跳过-git-add-步骤，自动把所有已被跟踪的文件的更改添加到暂存区并提交（新文件仍需-add）">跳过 <code>git add</code> 步骤，自动把所有<strong>已被跟踪</strong>的文件的更改添加到暂存区并提交（新文件仍需 <code>add</code>）</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -a -m <span class="string">&quot;&lt;message&gt;&quot;</span></span><br></pre></td></tr></table></figure>
-<h4 id="查看提交历史"><a class="markdownIt-Anchor" href="#查看提交历史">#</a> 查看提交历史</h4>
+<h4 id="查看提交历史">查看提交历史</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <p>这个是树状查看所有提交记录的指令</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> --graph --oneline --all --decorate</span><br></pre></td></tr></table></figure>
-<p>直接使用别名 <code>tree</code></p>
+<p>直接使用别名<code>tree</code></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global alias.tree <span class="string">&quot;log --graph --oneline --all --decorate&quot;</span></span><br></pre></td></tr></table></figure>
-<h1 id="分支管理"><a class="markdownIt-Anchor" href="#分支管理">#</a> 分支管理</h1>
+<h1>分支管理</h1>
 <p>分支功能让你可以并行开发多个功能或修复问题，互不干扰</p>
-<h4 id="列出本地所有分支"><a class="markdownIt-Anchor" href="#列出本地所有分支">#</a> 列出本地所有分支</h4>
+<h4 id="列出本地所有分支">列出本地所有分支</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
-<h4 id="创建一个新的分支"><a class="markdownIt-Anchor" href="#创建一个新的分支">#</a> 创建一个新的分支</h4>
+<h4 id="创建一个新的分支">创建一个新的分支</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;name&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="切换到指定的分支"><a class="markdownIt-Anchor" href="#切换到指定的分支">#</a> 切换到指定的分支</h4>
+<h4 id="切换到指定的分支">切换到指定的分支</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;name&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="创建并切换到新的分支上"><a class="markdownIt-Anchor" href="#创建并切换到新的分支上">#</a> 创建并切换到新的分支上</h4>
+<h4 id="创建并切换到新的分支上">创建并切换到新的分支上</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;name&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="将指定分支的更改合并到当前分支"><a class="markdownIt-Anchor" href="#将指定分支的更改合并到当前分支">#</a> 将指定分支的更改合并到当前分支</h4>
+<h4 id="将指定分支的更改合并到当前分支">将指定分支的更改合并到当前分支</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;name&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="删除本地分支需确保分支已合并"><a class="markdownIt-Anchor" href="#删除本地分支需确保分支已合并">#</a> 删除本地分支（需确保分支已合并）</h4>
+<h4 id="删除本地分支（需确保分支已合并）">删除本地分支（需确保分支已合并）</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;name&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="强制删除本地分支即使未合并"><a class="markdownIt-Anchor" href="#强制删除本地分支即使未合并">#</a> 强制删除本地分支（即使未合并）</h4>
+<h4 id="强制删除本地分支（即使未合并）">强制删除本地分支（即使未合并）</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -D &lt;name&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="远程仓库协作remote-push-pull"><a class="markdownIt-Anchor" href="#远程仓库协作remote-push-pull">#</a> 远程仓库协作（remote, push, pull）</h1>
+<h1>远程仓库协作（remote, push, pull）</h1>
 <p>与团队成员协作时，需要通过远程仓库（如 GitLab、GitHub）来同步代码</p>
-<h4 id="查看已配置的远程仓库地址"><a class="markdownIt-Anchor" href="#查看已配置的远程仓库地址">#</a> 查看已配置的远程仓库地址</h4>
+<h4 id="查看已配置的远程仓库地址">查看已配置的远程仓库地址</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
-<h4 id="添加一个新的远程仓库"><a class="markdownIt-Anchor" href="#添加一个新的远程仓库">#</a> 添加一个新的远程仓库</h4>
+<h4 id="添加一个新的远程仓库">添加一个新的远程仓库</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="第一次推送时建立本地分支与远程分支的关联之后可直接用-git-push"><a class="markdownIt-Anchor" href="#第一次推送时建立本地分支与远程分支的关联之后可直接用-git-push">#</a> 第一次推送时，建立本地分支与远程分支的关联，之后可直接用  <code>git push</code></h4>
+<h4 id="第一次推送时，建立本地分支与远程分支的关联，之后可直接用-git-push">第一次推送时，建立本地分支与远程分支的关联，之后可直接用 <code>git push</code></h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="从远程仓库拉取最新更新并自动合并到当前分支相当于-git-fetch-git-merge"><a class="markdownIt-Anchor" href="#从远程仓库拉取最新更新并自动合并到当前分支相当于-git-fetch-git-merge">#</a> 从远程仓库拉取最新更新并自动合并到当前分支（相当于  <code>git fetch</code>  +  <code>git merge</code> ）</h4>
+<h4 id="从远程仓库拉取最新更新并自动合并到当前分支（相当于-git-fetch-git-merge）">从远程仓库拉取最新更新并自动合并到当前分支（相当于 <code>git fetch</code> + <code>git merge</code>）</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull &lt;remote&gt; &lt;branch&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="仅从远程仓库下载最新更新但不自动合并"><a class="markdownIt-Anchor" href="#仅从远程仓库下载最新更新但不自动合并">#</a> 仅从远程仓库下载最新更新，但不自动合并</h4>
+<h4 id="仅从远程仓库下载最新更新，但不自动合并">仅从远程仓库下载最新更新，但不自动合并</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git fetch &lt;remote&gt;</span><br></pre></td></tr></table></figure>
-<h1 id="撤销与恢复reset-revert-restore"><a class="markdownIt-Anchor" href="#撤销与恢复reset-revert-restore">#</a> 撤销与恢复（reset, revert, restore）</h1>
+<h1>撤销与恢复（reset, revert, restore）</h1>
 <p>Git 提供了强大的撤销能力，让你可以放心地尝试各种操作。</p>
-<h4 id="撤销工作区中指定文件的修改不可恢复"><a class="markdownIt-Anchor" href="#撤销工作区中指定文件的修改不可恢复">#</a> 撤销工作区中指定文件的修改（不可恢复）</h4>
+<h4 id="撤销工作区中指定文件的修改（不可恢复）">撤销工作区中指定文件的修改（不可恢复）</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git restore &lt;file&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="将文件从暂存区移回工作区即撤销-git-add"><a class="markdownIt-Anchor" href="#将文件从暂存区移回工作区即撤销-git-add">#</a> 将文件从暂存区移回工作区（即撤销  <code>git add</code> ）</h4>
+<h4 id="将文件从暂存区移回工作区（即撤销-git-add）">将文件从暂存区移回工作区（即撤销 <code>git add</code>）</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git restore --staged &lt;file&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="修改最近一次提交可修改提交信息或补充遗漏文件"><a class="markdownIt-Anchor" href="#修改最近一次提交可修改提交信息或补充遗漏文件">#</a> 修改最近一次提交（可修改提交信息或补充遗漏文件</h4>
+<h4 id="修改最近一次提交（可修改提交信息或补充遗漏文件">修改最近一次提交（可修改提交信息或补充遗漏文件</h4>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend</span><br></pre></td></tr></table></figure>
-<h4 id="撤销最近一次提交但保留工作区的更改"><a class="markdownIt-Anchor" href="#撤销最近一次提交但保留工作区的更改">#</a> 撤销最近一次提交，但保留工作区的更改</h4>
-<p>（ <code>--soft</code>  保留暂存区， <code>--mixed</code>  取消暂存，默认  <code>--mixed</code> )</p>
+<h4 id="撤销最近一次提交，但保留工作区的更改">撤销最近一次提交，但保留工作区的更改</h4>
+<p>（<code>--soft</code> 保留暂存区，<code>--mixed</code> 取消暂存，默认 <code>--mixed</code>)</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD~1</span><br></pre></td></tr></table></figure>
-<h4 id="彻底回退到某一个版本"><a class="markdownIt-Anchor" href="#彻底回退到某一个版本">#</a> 彻底回退到某一个版本</h4>
+<h4 id="彻底回退到某一个版本">彻底回退到某一个版本</h4>
 <p>彻底回退到指定的历史版本，之后的更改将<strong>永久丢失</strong></p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard &lt;commit-hash&gt;</span><br></pre></td></tr></table></figure>
-<h4 id="安全撤销某一次提交"><a class="markdownIt-Anchor" href="#安全撤销某一次提交">#</a> 安全撤销某一次提交</h4>
+<h4 id="安全撤销某一次提交">安全撤销某一次提交</h4>
 <p><strong>安全地</strong>撤销某次提交，通过创建一个新的反向提交来实现，适用于已推送的提交</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git revert &lt;commit-hash&gt;</span><br></pre></td></tr></table></figure>
 
@@ -313,20 +313,20 @@ tadylon = tadylon tech blog</title>
     <div class="item left">
       
 
-  <a href="/Math/Probability/Base/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_15.jpg" title=" Probability Basics ">
+  <a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_14.jpg" title=" National Income Accounts ">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3> Probability Basics </h3>
+  <h3> National Income Accounts </h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/Math/Calculus/Divergence/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_1.png" title=" Divergence Theorem ">
+  <a href="/Economic/Macroeconomics/Part2%20Models/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_3.jpg" title=" Models ">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3> Divergence Theorem </h3>
+  <h3> Models </h3>
   </a>
 
     </div>
@@ -345,7 +345,7 @@ tadylon = tadylon tech blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%9A%84%E9%9C%80%E8%A6%81%E8%AE%B0%E4%BD%8F%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-number">1.</span> <span class="toc-text"> 正式工作流的需要记住的指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text"> 初始化仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E7%8A%B6%E6%80%81%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E8%A2%AB%E4%BF%AE%E6%94%B9-%E6%96%B0%E5%A2%9E%E6%88%96%E5%88%A0%E9%99%A4"><span class="toc-number">1.2.</span> <span class="toc-text"> 查看工作区和暂存区的状态（哪些文件被修改、新增或删除）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%96%87%E4%BB%B6%E7%9A%84%E6%9B%B4%E6%94%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA%E5%87%86%E5%A4%87%E6%8F%90%E4%BA%A4"><span class="toc-number">1.3.</span> <span class="toc-text"> 将文件的更改添加到暂存区，准备提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E6%9B%B4%E6%94%B9%E6%AD%A3%E5%BC%8F%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%B9%B6%E9%99%84%E4%B8%8A%E6%8F%90%E4%BA%A4%E8%AF%B4%E6%98%8E"><span class="toc-number">1.4.</span> <span class="toc-text"> 将暂存区的更改正式提交到本地仓库，并附上提交说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87-git-add-%E6%AD%A5%E9%AA%A4%E8%87%AA%E5%8A%A8%E6%8A%8A%E6%89%80%E6%9C%89%E5%B7%B2%E8%A2%AB%E8%B7%9F%E8%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6%E7%9A%84%E6%9B%B4%E6%94%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA%E5%B9%B6%E6%8F%90%E4%BA%A4%E6%96%B0%E6%96%87%E4%BB%B6%E4%BB%8D%E9%9C%80-add"><span class="toc-number">1.5.</span> <span class="toc-text"> 跳过  git add  步骤，自动把所有已被跟踪的文件的更改添加到暂存区并提交（新文件仍需  add ）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2"><span class="toc-number">1.6.</span> <span class="toc-text"> 查看提交历史</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text"> 分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E6%9C%AC%E5%9C%B0%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text"> 列出本地所有分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-number">2.2.</span> <span class="toc-text"> 创建一个新的分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-number">2.3.</span> <span class="toc-text"> 切换到指定的分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E7%9A%84%E5%88%86%E6%94%AF%E4%B8%8A"><span class="toc-number">2.4.</span> <span class="toc-text"> 创建并切换到新的分支上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%8C%87%E5%AE%9A%E5%88%86%E6%94%AF%E7%9A%84%E6%9B%B4%E6%94%B9%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF"><span class="toc-number">2.5.</span> <span class="toc-text"> 将指定分支的更改合并到当前分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E9%9C%80%E7%A1%AE%E4%BF%9D%E5%88%86%E6%94%AF%E5%B7%B2%E5%90%88%E5%B9%B6"><span class="toc-number">2.6.</span> <span class="toc-text"> 删除本地分支（需确保分支已合并）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E5%8D%B3%E4%BD%BF%E6%9C%AA%E5%90%88%E5%B9%B6"><span class="toc-number">2.7.</span> <span class="toc-text"> 强制删除本地分支（即使未合并）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%8D%8F%E4%BD%9Cremote-push-pull"><span class="toc-number">3.</span> <span class="toc-text"> 远程仓库协作（remote, push, pull）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E9%85%8D%E7%BD%AE%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="toc-number">3.1.</span> <span class="toc-text"> 查看已配置的远程仓库地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">3.2.</span> <span class="toc-text"> 添加一个新的远程仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8E%A8%E9%80%81%E6%97%B6%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E4%B8%8E%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E7%9A%84%E5%85%B3%E8%81%94%E4%B9%8B%E5%90%8E%E5%8F%AF%E7%9B%B4%E6%8E%A5%E7%94%A8-git-push"><span class="toc-number">3.3.</span> <span class="toc-text"> 第一次推送时，建立本地分支与远程分支的关联，之后可直接用  git push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8B%89%E5%8F%96%E6%9C%80%E6%96%B0%E6%9B%B4%E6%96%B0%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%E7%9B%B8%E5%BD%93%E4%BA%8E-git-fetch-git-merge"><span class="toc-number">3.4.</span> <span class="toc-text"> 从远程仓库拉取最新更新并自动合并到当前分支（相当于  git fetch  +  git merge ）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%85%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E6%9B%B4%E6%96%B0%E4%BD%86%E4%B8%8D%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6"><span class="toc-number">3.5.</span> <span class="toc-text"> 仅从远程仓库下载最新更新，但不自动合并</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E4%B8%8E%E6%81%A2%E5%A4%8Dreset-revert-restore"><span class="toc-number">4.</span> <span class="toc-text"> 撤销与恢复（reset, revert, restore）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9%E4%B8%8D%E5%8F%AF%E6%81%A2%E5%A4%8D"><span class="toc-number">4.1.</span> <span class="toc-text"> 撤销工作区中指定文件的修改（不可恢复）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%96%87%E4%BB%B6%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E7%A7%BB%E5%9B%9E%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%8D%B3%E6%92%A4%E9%94%80-git-add"><span class="toc-number">4.2.</span> <span class="toc-text"> 将文件从暂存区移回工作区（即撤销  git add ）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E5%8F%AF%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%88%96%E8%A1%A5%E5%85%85%E9%81%97%E6%BC%8F%E6%96%87%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text"> 修改最近一次提交（可修改提交信息或补充遗漏文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E4%BD%86%E4%BF%9D%E7%95%99%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="toc-number">4.4.</span> <span class="toc-text"> 撤销最近一次提交，但保留工作区的更改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%BB%E5%BA%95%E5%9B%9E%E9%80%80%E5%88%B0%E6%9F%90%E4%B8%80%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="toc-number">4.5.</span> <span class="toc-text"> 彻底回退到某一个版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%92%A4%E9%94%80%E6%9F%90%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4"><span class="toc-number">4.6.</span> <span class="toc-text"> 安全撤销某一次提交</span></a></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">正式工作流的需要记住的指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">初始化仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E5%92%8C%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E7%8A%B6%E6%80%81%EF%BC%88%E5%93%AA%E4%BA%9B%E6%96%87%E4%BB%B6%E8%A2%AB%E4%BF%AE%E6%94%B9%E3%80%81%E6%96%B0%E5%A2%9E%E6%88%96%E5%88%A0%E9%99%A4%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">查看工作区和暂存区的状态（哪些文件被修改、新增或删除）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%96%87%E4%BB%B6%E7%9A%84%E6%9B%B4%E6%94%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%8C%E5%87%86%E5%A4%87%E6%8F%90%E4%BA%A4"><span class="toc-number">1.3.</span> <span class="toc-text">将文件的更改添加到暂存区，准备提交</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%9A%82%E5%AD%98%E5%8C%BA%E7%9A%84%E6%9B%B4%E6%94%B9%E6%AD%A3%E5%BC%8F%E6%8F%90%E4%BA%A4%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%EF%BC%8C%E5%B9%B6%E9%99%84%E4%B8%8A%E6%8F%90%E4%BA%A4%E8%AF%B4%E6%98%8E"><span class="toc-number">1.4.</span> <span class="toc-text">将暂存区的更改正式提交到本地仓库，并附上提交说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%B3%E8%BF%87-git-add-%E6%AD%A5%E9%AA%A4%EF%BC%8C%E8%87%AA%E5%8A%A8%E6%8A%8A%E6%89%80%E6%9C%89%E5%B7%B2%E8%A2%AB%E8%B7%9F%E8%B8%AA%E7%9A%84%E6%96%87%E4%BB%B6%E7%9A%84%E6%9B%B4%E6%94%B9%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA%E5%B9%B6%E6%8F%90%E4%BA%A4%EF%BC%88%E6%96%B0%E6%96%87%E4%BB%B6%E4%BB%8D%E9%9C%80-add%EF%BC%89"><span class="toc-number">1.5.</span> <span class="toc-text">跳过 git add 步骤，自动把所有已被跟踪的文件的更改添加到暂存区并提交（新文件仍需 add）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%8F%90%E4%BA%A4%E5%8E%86%E5%8F%B2"><span class="toc-number">1.6.</span> <span class="toc-text">查看提交历史</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">分支管理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E6%9C%AC%E5%9C%B0%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF"><span class="toc-number">2.1.</span> <span class="toc-text">列出本地所有分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-number">2.2.</span> <span class="toc-text">创建一个新的分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E5%88%B0%E6%8C%87%E5%AE%9A%E7%9A%84%E5%88%86%E6%94%AF"><span class="toc-number">2.3.</span> <span class="toc-text">切换到指定的分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%B9%B6%E5%88%87%E6%8D%A2%E5%88%B0%E6%96%B0%E7%9A%84%E5%88%86%E6%94%AF%E4%B8%8A"><span class="toc-number">2.4.</span> <span class="toc-text">创建并切换到新的分支上</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%8C%87%E5%AE%9A%E5%88%86%E6%94%AF%E7%9A%84%E6%9B%B4%E6%94%B9%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF"><span class="toc-number">2.5.</span> <span class="toc-text">将指定分支的更改合并到当前分支</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%EF%BC%88%E9%9C%80%E7%A1%AE%E4%BF%9D%E5%88%86%E6%94%AF%E5%B7%B2%E5%90%88%E5%B9%B6%EF%BC%89"><span class="toc-number">2.6.</span> <span class="toc-text">删除本地分支（需确保分支已合并）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%88%B6%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%EF%BC%88%E5%8D%B3%E4%BD%BF%E6%9C%AA%E5%90%88%E5%B9%B6%EF%BC%89"><span class="toc-number">2.7.</span> <span class="toc-text">强制删除本地分支（即使未合并）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">3.</span> <span class="toc-text">远程仓库协作（remote, push, pull）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%B2%E9%85%8D%E7%BD%AE%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80"><span class="toc-number">3.1.</span> <span class="toc-text">查看已配置的远程仓库地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E4%B8%80%E4%B8%AA%E6%96%B0%E7%9A%84%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="toc-number">3.2.</span> <span class="toc-text">添加一个新的远程仓库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AC%A1%E6%8E%A8%E9%80%81%E6%97%B6%EF%BC%8C%E5%BB%BA%E7%AB%8B%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF%E4%B8%8E%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF%E7%9A%84%E5%85%B3%E8%81%94%EF%BC%8C%E4%B9%8B%E5%90%8E%E5%8F%AF%E7%9B%B4%E6%8E%A5%E7%94%A8-git-push"><span class="toc-number">3.3.</span> <span class="toc-text">第一次推送时，建立本地分支与远程分支的关联，之后可直接用 git push</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%8B%89%E5%8F%96%E6%9C%80%E6%96%B0%E6%9B%B4%E6%96%B0%E5%B9%B6%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF%EF%BC%88%E7%9B%B8%E5%BD%93%E4%BA%8E-git-fetch-git-merge%EF%BC%89"><span class="toc-number">3.4.</span> <span class="toc-text">从远程仓库拉取最新更新并自动合并到当前分支（相当于 git fetch + git merge）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%85%E4%BB%8E%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E4%B8%8B%E8%BD%BD%E6%9C%80%E6%96%B0%E6%9B%B4%E6%96%B0%EF%BC%8C%E4%BD%86%E4%B8%8D%E8%87%AA%E5%8A%A8%E5%90%88%E5%B9%B6"><span class="toc-number">3.5.</span> <span class="toc-text">仅从远程仓库下载最新更新，但不自动合并</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">4.</span> <span class="toc-text">撤销与恢复（reset, revert, restore）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E5%B7%A5%E4%BD%9C%E5%8C%BA%E4%B8%AD%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E7%9A%84%E4%BF%AE%E6%94%B9%EF%BC%88%E4%B8%8D%E5%8F%AF%E6%81%A2%E5%A4%8D%EF%BC%89"><span class="toc-number">4.1.</span> <span class="toc-text">撤销工作区中指定文件的修改（不可恢复）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%86%E6%96%87%E4%BB%B6%E4%BB%8E%E6%9A%82%E5%AD%98%E5%8C%BA%E7%A7%BB%E5%9B%9E%E5%B7%A5%E4%BD%9C%E5%8C%BA%EF%BC%88%E5%8D%B3%E6%92%A4%E9%94%80-git-add%EF%BC%89"><span class="toc-number">4.2.</span> <span class="toc-text">将文件从暂存区移回工作区（即撤销 git add）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%EF%BC%88%E5%8F%AF%E4%BF%AE%E6%94%B9%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%88%96%E8%A1%A5%E5%85%85%E9%81%97%E6%BC%8F%E6%96%87%E4%BB%B6"><span class="toc-number">4.3.</span> <span class="toc-text">修改最近一次提交（可修改提交信息或补充遗漏文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E6%9C%80%E8%BF%91%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%EF%BC%8C%E4%BD%86%E4%BF%9D%E7%95%99%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E6%9B%B4%E6%94%B9"><span class="toc-number">4.4.</span> <span class="toc-text">撤销最近一次提交，但保留工作区的更改</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%BB%E5%BA%95%E5%9B%9E%E9%80%80%E5%88%B0%E6%9F%90%E4%B8%80%E4%B8%AA%E7%89%88%E6%9C%AC"><span class="toc-number">4.5.</span> <span class="toc-text">彻底回退到某一个版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%92%A4%E9%94%80%E6%9F%90%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4"><span class="toc-number">4.6.</span> <span class="toc-text">安全撤销某一次提交</span></a></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -407,12 +407,12 @@ tadylon = tadylon tech blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/Math/Probability/Base/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
     <li class="next pjax">
-        <a href="/Math/Calculus/Divergence/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+        <a href="/Economic/Macroeconomics/Part2%20Models/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
     </li>
     <li class="percent"></li>
   </ul>
@@ -436,7 +436,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Math/Probability/Base/" title=" Probability Basics "> Probability Basics </a></span>
+    <span><a href="/Economic/Finance/Part6%20Open%20Economy/" title=" Open Economy "> Open Economy </a></span>
   </li>
 
       
@@ -445,7 +445,25 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Macroeconomics/Part7%20Unemployment%20&%20Inflation/" title=" Unemployment and Inflation "> Unemployment and Inflation </a></span>
+    <span><a href="/Code/CMake/Base/" title=" CMake Base "> CMake Base </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Calculus/Calculus/" title=" Calculus "> Calculus </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Probability/Probability/" title=" Probability Overview "> Probability Overview </a></span>
   </li>
 
       
@@ -472,7 +490,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Microeconomics/Part4%20Market%20Structure/" title="Untitled">Untitled</a></span>
+    <span><a href="/Economic/Finance/Part7%20Financial%20Derivatives/" title=" Financial Derivatives "> Financial Derivatives </a></span>
   </li>
 
       
@@ -481,7 +499,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Microeconomics/Part7%20Market%20Failure/" title="Untitled">Untitled</a></span>
+    <span><a href="/Economic/Finance/Part4%20Exchange%20Rates/" title=" Exchange Rates "> Exchange Rates </a></span>
   </li>
 
       
@@ -490,25 +508,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Math/Model/Shannon%20Entropy/" title=" Shannon Entropy "> Shannon Entropy </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Macroeconomics/Part5%20Exchange%20Rate/" title=" Exchange Rate "> Exchange Rate </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Financial/knowledge/" title=" Knowledge of Financial "> Knowledge of Financial </a></span>
+    <span><a href="/Economic/Macroeconomics/Part6%20Economics%20Growth/" title=" Economic Growth "> Economic Growth </a></span>
   </li>
 
       
@@ -542,13 +542,13 @@ tadylon = tadylon tech blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">91k words</span>
+    <span title="Symbols count total">99k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:23</span>
+    <span title="Reading time total">1:30</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
