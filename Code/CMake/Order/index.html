@@ -127,12 +127,12 @@ tadylon = tadylon tech blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="/img/background/background_10.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_11.png"></li>
-          <li class="item" data-background-image="/img/background/background_12.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_13.jpg"></li>
           <li class="item" data-background-image="/img/background/background_7.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_1.png"></li>
+          <li class="item" data-background-image="/img/background/background_14.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_15.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_11.png"></li>
+          <li class="item" data-background-image="/img/background/background_3.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_2.jpg"></li>
         </ul>
       </div>
     </header>
@@ -178,10 +178,10 @@ tadylon = tadylon tech blog</title>
 
     <p>一下是一些常见的终端指令</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1. 创建并进入构建目录（防止污染源码）</span></span><br><span class="line"><span class="built_in">mkdir</span> build</span><br><span class="line"><span class="built_in">cd</span> build</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2. 配置项目 (Configure)</span></span><br><span class="line"><span class="comment"># 读取上一级目录的 CMakeLists.txt，生成 Makefile 或 VS 工程文件</span></span><br><span class="line">cmake ..</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3. 执行编译 (Build)</span></span><br><span class="line"><span class="comment"># 这一步会调用底层的编译器（如 g++ 或 MSVC）生成 .exe</span></span><br><span class="line">cmake --build .</span><br></pre></td></tr></table></figure>
-<h4 id="指定生成器-Generator">指定生成器 (Generator)</h4>
+<h4 id="指定生成器-generator"><a class="markdownIt-Anchor" href="#指定生成器-generator">#</a> 指定生成器 (Generator)</h4>
 <p>如果你电脑上同时装了 MinGW (g++) 和 Visual Studio，CMake 可能默认选错。你可以手动指定：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 MinGW 的 Makefile (使用 g++)</span></span><br><span class="line">cmake -G <span class="string">&quot;MinGW Makefiles&quot;</span> ..</span><br><span class="line"></span><br><span class="line"><span class="comment"># 生成 Visual Studio 2022 工程</span></span><br><span class="line">cmake -G <span class="string">&quot;Visual Studio 17 2022&quot;</span> ..</span><br></pre></td></tr></table></figure>
-<h4 id="指定编译模式-Debug-Release">指定编译模式 (Debug/Release)</h4>
+<h4 id="指定编译模式-debugrelease"><a class="markdownIt-Anchor" href="#指定编译模式-debugrelease">#</a> 指定编译模式 (Debug/Release)</h4>
 <ul>
 <li>
 <p><strong>Debug</strong>：包含调试信息，运行慢，方便找 Bug。</p>
@@ -191,10 +191,10 @@ tadylon = tadylon tech blog</title>
 </li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在配置阶段指定</span></span><br><span class="line">cmake .. -DCMAKE_BUILD_TYPE=Release</span><br></pre></td></tr></table></figure>
-<h4 id="清理与重置">清理与重置</h4>
-<p>如果修改了 <code>CMakeLists.txt</code> 发现没生效，或者想重新编译，最简单的办法是：</p>
+<h4 id="清理与重置"><a class="markdownIt-Anchor" href="#清理与重置">#</a> 清理与重置</h4>
+<p>如果修改了  <code>CMakeLists.txt</code>  发现没生效，或者想重新编译，最简单的办法是：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除 build 文件夹内容（Windows CMD 命令）</span></span><br><span class="line">rd /s /q build</span><br><span class="line"><span class="built_in">mkdir</span> build</span><br></pre></td></tr></table></figure>
-<h3 id="实用小工具指令">实用小工具指令</h3>
+<h3 id="实用小工具指令"><a class="markdownIt-Anchor" href="#实用小工具指令">#</a> 实用小工具指令</h3>
 <table>
 <thead>
 <tr>
@@ -221,32 +221,32 @@ tadylon = tadylon tech blog</title>
 </tr>
 </tbody>
 </table>
-<h3 id="最快捷的单条指令">最快捷的单条指令</h3>
-<p>在项目的根目录下（即 <code>CMakeLists.txt</code> 所在的目录）运行：</p>
+<h3 id="最快捷的单条指令"><a class="markdownIt-Anchor" href="#最快捷的单条指令">#</a> 最快捷的单条指令</h3>
+<p>在项目的根目录下（即  <code>CMakeLists.txt</code>  所在的目录）运行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake -S . -B build</span><br></pre></td></tr></table></figure>
 <p><strong>参数解释：</strong></p>
 <ul>
 <li>
-<p><strong><code>-S .</code></strong>：指定源码（Source）目录为当前目录（<code>.</code>）。</p>
+<p><strong> <code>-S .</code> </strong>：指定源码（Source）目录为当前目录（ <code>.</code> ）。</p>
 </li>
 <li>
-<p><strong><code>-B build</code></strong>：指定构建（Build）目录为 <code>build</code>。如果该目录不存在，CMake 会<strong>自动为你创建</strong>。</p>
+<p><strong> <code>-B build</code> </strong>：指定构建（Build）目录为  <code>build</code> 。如果该目录不存在，CMake 会<strong>自动为你创建</strong>。</p>
 </li>
 </ul>
-<h3 id="紧接着的一键编译指令">紧接着的一键编译指令</h3>
-<p>生成完解决方案（Makefile 或 .sln）后，你不需要进入 <code>build</code> 目录，直接在根目录执行：</p>
+<h3 id="紧接着的一键编译指令"><a class="markdownIt-Anchor" href="#紧接着的一键编译指令">#</a> 紧接着的一键编译指令</h3>
+<p>生成完解决方案（Makefile 或 .sln）后，你不需要进入  <code>build</code>  目录，直接在根目录执行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cmake --build build</span><br></pre></td></tr></table></figure>
-<p>这行命令会自动去 <code>build</code> 文件夹里找生成的工程文件并开始编译。</p>
-<h3 id="如果你想更进一步（指定编译器）">如果你想更进一步（指定编译器）</h3>
+<p>这行命令会自动去  <code>build</code>  文件夹里找生成的工程文件并开始编译。</p>
+<h3 id="如果你想更进一步指定编译器"><a class="markdownIt-Anchor" href="#如果你想更进一步指定编译器">#</a> 如果你想更进一步（指定编译器）</h3>
 <p>在 Windows 上，如果你电脑里装了多个编译器（比如既有 VS 又有 MinGW），建议在生成时指定生成器：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 生成 MinGW 的 Makefile (适合习惯命令行的人)</span></span><br><span class="line">cmake -S . -B build -G <span class="string">&quot;MinGW Makefiles&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者生成 VS 2022 的工程方案</span></span><br><span class="line">cmake -S . -B build -G <span class="string">&quot;Visual Studio 17 2022&quot;</span></span><br></pre></td></tr></table></figure>
 <p>以后你改了代码，只需要在根目录连着敲这两行：</p>
 <ol>
 <li>
-<p><strong>生成</strong>：<code>cmake -S . -B build</code></p>
+<p><strong>生成</strong>： <code>cmake -S . -B build</code></p>
 </li>
 <li>
-<p><strong>编译</strong>：<code>cmake --build build</code></p>
+<p><strong>编译</strong>： <code>cmake --build build</code></p>
 </li>
 </ol>
 
@@ -292,17 +292,17 @@ tadylon = tadylon tech blog</title>
     <div class="item left">
       
 
-  <a href="/Code/CMake/Base/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_2.jpg" title=" CMake Base ">
+  <a href="/Economic/Finance/Part1%20Financial%20Markets/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_2.jpg" title=" Financial Markets ">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3> CMake Base </h3>
+  <h3> Financial Markets </h3>
   </a>
 
     </div>
     <div class="item right">
       
 
-  <a href="/Code/CMake/linker/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_5.jpg" title=" CMake Linker ">
+  <a href="/Code/CMake/linker/" itemprop="url" rel="next" data-background-image="&#x2F;img&#x2F;background&#x2F;background_8.jpg" title=" CMake Linker ">
   <span class="type">Next Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
   <h3> CMake Linker </h3>
@@ -324,7 +324,7 @@ tadylon = tadylon tech blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%94%9F%E6%88%90%E5%99%A8-Generator"><span class="toc-number">1.</span> <span class="toc-text">指定生成器 (Generator)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F-Debug-Release"><span class="toc-number">2.</span> <span class="toc-text">指定编译模式 (Debug&#x2F;Release)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E4%B8%8E%E9%87%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text">清理与重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">实用小工具指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%BF%AB%E6%8D%B7%E7%9A%84%E5%8D%95%E6%9D%A1%E6%8C%87%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text">最快捷的单条指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A7%E6%8E%A5%E7%9D%80%E7%9A%84%E4%B8%80%E9%94%AE%E7%BC%96%E8%AF%91%E6%8C%87%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text">紧接着的一键编译指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E6%9B%B4%E8%BF%9B%E4%B8%80%E6%AD%A5%EF%BC%88%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E5%99%A8%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">如果你想更进一步（指定编译器）</span></a></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%94%9F%E6%88%90%E5%99%A8-generator"><span class="toc-number">1.</span> <span class="toc-text"> 指定生成器 (Generator)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E6%A8%A1%E5%BC%8F-debugrelease"><span class="toc-number">2.</span> <span class="toc-text"> 指定编译模式 (Debug&#x2F;Release)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%85%E7%90%86%E4%B8%8E%E9%87%8D%E7%BD%AE"><span class="toc-number">3.</span> <span class="toc-text"> 清理与重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%94%A8%E5%B0%8F%E5%B7%A5%E5%85%B7%E6%8C%87%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text"> 实用小工具指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%BF%AB%E6%8D%B7%E7%9A%84%E5%8D%95%E6%9D%A1%E6%8C%87%E4%BB%A4"><span class="toc-number">5.</span> <span class="toc-text"> 最快捷的单条指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B4%A7%E6%8E%A5%E7%9D%80%E7%9A%84%E4%B8%80%E9%94%AE%E7%BC%96%E8%AF%91%E6%8C%87%E4%BB%A4"><span class="toc-number">6.</span> <span class="toc-text"> 紧接着的一键编译指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%83%B3%E6%9B%B4%E8%BF%9B%E4%B8%80%E6%AD%A5%E6%8C%87%E5%AE%9A%E7%BC%96%E8%AF%91%E5%99%A8"><span class="toc-number">7.</span> <span class="toc-text"> 如果你想更进一步（指定编译器）</span></a></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -386,7 +386,7 @@ tadylon = tadylon tech blog</title>
 
   <ul id="quick">
     <li class="prev pjax">
-        <a href="/Code/CMake/Base/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+        <a href="/Economic/Finance/Part1%20Financial%20Markets/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
     </li>
     <li class="up"><i class="ic i-arrow-up"></i></li>
     <li class="down"><i class="ic i-arrow-down"></i></li>
@@ -415,7 +415,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Microeconomics/Part2%20Consumer%20Behaviour/" title="Untitled">Untitled</a></span>
+    <span><a href="/Economic/Finance/Part1%20Financial%20Markets/" title=" Financial Markets "> Financial Markets </a></span>
   </li>
 
       
@@ -424,61 +424,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Microeconomics/Part7%20Market%20Failure/" title="Untitled">Untitled</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" title=" National Income Accounts "> National Income Accounts </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Financial/knowledge/" title=" Knowledge of Financial "> Knowledge of Financial </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Finance/Part2%20Commercial%20Banks/" title=" Commercial Banks "> Commercial Banks </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Microeconomics/Part3%20Producer%20Behaviour/" title="Untitled">Untitled</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Code/CMake/Base/" title=" CMake Base "> CMake Base </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Macroeconomics/Part3%20Microeconomics/" title=" Macroeconomics "> Macroeconomics </a></span>
+    <span><a href="/Economic/Finance/Part6%20Open%20Economy/" title=" Open Economy "> Open Economy </a></span>
   </li>
 
       
@@ -496,7 +442,61 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Code/Git/learning/" title=" Git Learning "> Git Learning </a></span>
+    <span><a href="/Code/CMake/Order/" title=" CMake Order "> CMake Order </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Macroeconomics/Part5%20Exchange%20Rate/" title=" Exchange Rate "> Exchange Rate </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Linear%20Algebra/Linear%20Algebra/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Microeconomics/Part2%20Consumer%20Behaviour/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" title=" National Income Accounts "> National Income Accounts </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Code/CMake/Base/" title=" CMake Base "> CMake Base </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Calculus/Divergence/" title=" Divergence Theorem "> Divergence Theorem </a></span>
   </li>
 
   </ul>
@@ -521,13 +521,13 @@ tadylon = tadylon tech blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">94k words</span>
+    <span title="Symbols count total">91k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:26</span>
+    <span title="Reading time total">1:23</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

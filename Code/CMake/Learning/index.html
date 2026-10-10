@@ -28,12 +28,12 @@
 <link rel="canonical" href="http://tadylon.github.io/Code/CMake/Learning/">
 
 
-<meta name="description" content="CMake 基础 Function CMakeLists.txt 文件使用一系列的 CMake 指令来描述构建过程。常见的指令包括： cmake_minimum_required() 1、指定 CMake 的最低版本要求： 1234cmake_minimum_required(VERSION &lt;version&gt;)# 例如cmake_minimum_required(VERSION 3.">
+<meta name="description" content="# CMake 基础 # Function CMakeLists.txt 文件使用一系列的 CMake 指令来描述构建过程。常见的指令包括： #  cmake_minimum_required() 1、指定 CMake 的最低版本要求： 1234cmake_minimum_required(VERSION &lt;version&gt;)# 例如cmake_minimum_required(VER">
 <meta property="og:type" content="article">
 <meta property="og:title" content=" CMake Learning ">
 <meta property="og:url" content="http://tadylon.github.io/Code/CMake/Learning/index.html">
 <meta property="og:site_name" content="tadylon tech blog">
-<meta property="og:description" content="CMake 基础 Function CMakeLists.txt 文件使用一系列的 CMake 指令来描述构建过程。常见的指令包括： cmake_minimum_required() 1、指定 CMake 的最低版本要求： 1234cmake_minimum_required(VERSION &lt;version&gt;)# 例如cmake_minimum_required(VERSION 3.">
+<meta property="og:description" content="# CMake 基础 # Function CMakeLists.txt 文件使用一系列的 CMake 指令来描述构建过程。常见的指令包括： #  cmake_minimum_required() 1、指定 CMake 的最低版本要求： 1234cmake_minimum_required(VERSION &lt;version&gt;)# 例如cmake_minimum_required(VER">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2026-10-10T15:00:00.000Z">
 <meta property="article:modified_time" content="2026-10-10T09:33:22.098Z">
@@ -86,7 +86,7 @@ tadylon = tadylon tech blog</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">Symbols count in article</span>
-    <span>2.6k</span>
+    <span>2.7k</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
@@ -127,12 +127,12 @@ tadylon = tadylon tech blog</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="/img/background/background_1.png"></li>
-          <li class="item" data-background-image="/img/background/background_3.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_6.png"></li>
+          <li class="item" data-background-image="/img/background/background_13.jpg"></li>
           <li class="item" data-background-image="/img/background/background_15.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_11.png"></li>
-          <li class="item" data-background-image="/img/background/background_12.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_10.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_14.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_1.png"></li>
+          <li class="item" data-background-image="/img/background/background_2.jpg"></li>
         </ul>
       </div>
     </header>
@@ -176,51 +176,51 @@ tadylon = tadylon tech blog</title>
   <div class="body md" itemprop="articleBody">
     
 
-    <h1>CMake 基础</h1>
-<h2 id="Function">Function</h2>
+    <h1 id="cmake-基础"><a class="markdownIt-Anchor" href="#cmake-基础">#</a> CMake 基础</h1>
+<h2 id="function"><a class="markdownIt-Anchor" href="#function">#</a> Function</h2>
 <p>CMakeLists.txt 文件使用一系列的 CMake 指令来描述构建过程。常见的指令包括：</p>
-<h3 id="cmake-minimum-required"><code>cmake_minimum_required()</code></h3>
+<h3 id="cmake_minimum_required"><a class="markdownIt-Anchor" href="#cmake_minimum_required">#</a>  <code>cmake_minimum_required()</code></h3>
 <p>1、指定 CMake 的最低版本要求：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION &lt;version&gt;)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如</span></span><br><span class="line"><span class="keyword">cmake_minimum_required</span>(VERSION <span class="number">3.20</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="project"><code>project()</code></h3>
+<h3 id="project"><a class="markdownIt-Anchor" href="#project">#</a>  <code>project()</code></h3>
 <p>2、定义项目的名称和使用的编程语言：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">project</span>(&lt;project_name&gt; [&lt;language&gt;...])</span><br><span class="line"></span><br><span class="line"><span class="keyword">project</span>(MyProject CXX)</span><br></pre></td></tr></table></figure>
-<h3 id="add-executable"><code>add_executable()</code></h3>
+<h3 id="add_executable"><a class="markdownIt-Anchor" href="#add_executable">#</a>  <code>add_executable()</code></h3>
 <p>3、指定要生成的可执行文件和其源文件：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_executable</span>(&lt;<span class="keyword">target</span>&gt; &lt;source_files&gt;...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="keyword">add_executable</span>(MyExecutable main.cpp other_file.cpp)</span><br></pre></td></tr></table></figure>
-<h3 id="add-library"><code>add_library()</code></h3>
+<h3 id="add_library"><a class="markdownIt-Anchor" href="#add_library">#</a>  <code>add_library()</code></h3>
 <p>4、创建一个库（静态库或动态库）及其源文件：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(&lt;<span class="keyword">target</span>&gt; &lt;source_files&gt;...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="keyword">add_library</span>(MyLibrary STATIC library.cpp)</span><br></pre></td></tr></table></figure>
-<h3 id="add-subdirectory"><code>add_subdirectory</code></h3>
+<h3 id="add_subdirectory"><a class="markdownIt-Anchor" href="#add_subdirectory">#</a>  <code>add_subdirectory</code></h3>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_subdirectory</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">add_subdirectory</span>(src)</span><br><span class="line"><span class="keyword">add_subdirectory</span>(<span class="keyword">test</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="target-link-libraries"><code>target_link_libraries()</code></h3>
+<h3 id="target_link_libraries"><a class="markdownIt-Anchor" href="#target_link_libraries">#</a>  <code>target_link_libraries()</code></h3>
 <p>5、链接目标文件与其他库：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_link_libraries</span>(&lt;<span class="keyword">target</span>&gt; &lt;libraries&gt;...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="keyword">target_link_libraries</span>(MyExecutable MyLibrary)</span><br></pre></td></tr></table></figure>
-<h3 id="include-directories"><code>include_directories()</code></h3>
+<h3 id="include_directories"><a class="markdownIt-Anchor" href="#include_directories">#</a>  <code>include_directories()</code></h3>
 <p>6、添加头文件搜索路径：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">include_directories</span>(&lt;dirs&gt;...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="keyword">include_directories</span>(<span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="target-include-directories"><code>target_include_directories()</code></h3>
+<h3 id="target_include_directories"><a class="markdownIt-Anchor" href="#target_include_directories">#</a>  <code>target_include_directories()</code></h3>
 <p>7、设置目标属性：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">target_include_directories</span>(<span class="keyword">TARGET</span> target_name</span><br><span class="line">                          [BEFORE | AFTER]</span><br><span class="line">                          [SYSTEM] [PUBLIC | PRIVATE | INTERFACE]</span><br><span class="line">                          [items1...])</span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="keyword">target_include_directories</span>(MyExecutable PRIVATE <span class="variable">$&#123;PROJECT_SOURCE_DIR&#125;</span>/<span class="keyword">include</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="set"><code>set()</code></h3>
+<h3 id="set"><a class="markdownIt-Anchor" href="#set">#</a>  <code>set()</code></h3>
 <p>8、设置变量的值：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span>(&lt;variable&gt; &lt;value&gt;...)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"><span class="keyword">set</span>(CMAKE_CXX_STANDARD <span class="number">11</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="install"><code>install()</code></h3>
+<h3 id="install"><a class="markdownIt-Anchor" href="#install">#</a>  <code>install()</code></h3>
 <p>9、安装规则：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">install</span>(TARGETS target1 [target2 ...]</span><br><span class="line">        [RUNTIME DESTINATION dir]</span><br><span class="line">        [LIBRARY DESTINATION dir]</span><br><span class="line">        [ARCHIVE DESTINATION dir]</span><br><span class="line">        [INCLUDES DESTINATION [dir ...]]</span><br><span class="line">        [PRIVATE_HEADER DESTINATION dir]</span><br><span class="line">        [PUBLIC_HEADER DESTINATION dir])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">install</span>(TARGETS MyExecutable RUNTIME DESTINATION bin)</span><br></pre></td></tr></table></figure>
-<h3 id="if"><code>if()</code></h3>
+<h3 id="if"><a class="markdownIt-Anchor" href="#if">#</a>  <code>if()</code></h3>
 <p>10、条件语句 (if, elseif, else, endif 命令)</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(expression)</span><br><span class="line">  <span class="comment"># Commands</span></span><br><span class="line"><span class="keyword">elseif</span>(expression)</span><br><span class="line">  <span class="comment"># Commands</span></span><br><span class="line"><span class="keyword">else</span>()</span><br><span class="line">  <span class="comment"># Commands</span></span><br><span class="line"><span class="keyword">endif</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(CMAKE_BUILD_TYPE <span class="keyword">STREQUAL</span> <span class="string">&quot;Debug&quot;</span>)</span><br><span class="line">  <span class="keyword">message</span>(<span class="string">&quot;Debug build&quot;</span>)</span><br><span class="line"><span class="keyword">endif</span>()</span><br></pre></td></tr></table></figure>
-<h3 id="add-custom-command"><code>add_custom_command</code></h3>
+<h3 id="add_custom_command"><a class="markdownIt-Anchor" href="#add_custom_command">#</a>  <code>add_custom_command</code></h3>
 <p>11、自定义命令 (add_custom_command 命令)：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_custom_command</span>(</span><br><span class="line">   <span class="keyword">TARGET</span> <span class="keyword">target</span></span><br><span class="line">   PRE_BUILD | PRE_LINK | POST_BUILD</span><br><span class="line">   <span class="keyword">COMMAND</span> command1 [ARGS] [WORKING_DIRECTORY dir]</span><br><span class="line">   [<span class="keyword">COMMAND</span> command2 [ARGS]]</span><br><span class="line">   [DEPENDS [depend1 [depend2 ...]]]</span><br><span class="line">   [COMMENT comment]</span><br><span class="line">   [VERBATIM]</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 例如：</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">add_custom_command</span>(</span><br><span class="line">   <span class="keyword">TARGET</span> MyExecutable POST_BUILD</span><br><span class="line">   <span class="keyword">COMMAND</span> <span class="variable">$&#123;CMAKE_COMMAND&#125;</span> -E echo <span class="string">&quot;Build completed.&quot;</span></span><br></pre></td></tr></table></figure>
-<h3 id="find-package"><code>find_package()</code></h3>
+<h3 id="find_package"><a class="markdownIt-Anchor" href="#find_package">#</a>  <code>find_package()</code></h3>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">find_package</span>(包名 [REQUIRED] [COMPONENTS ...])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 查找外部库（如 OpenCV、Boost），导入其目标和变量。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">find_package</span>(opencv )</span><br></pre></td></tr></table></figure>
-<h2 id="CMakeLists-txt-文件">CMakeLists.txt 文件</h2>
+<h2 id="cmakeliststxt-文件"><a class="markdownIt-Anchor" href="#cmakeliststxt-文件">#</a> CMakeLists.txt 文件</h2>
 <p>CMakeLists.txt 是 CMake 的配置文件，用于定义项目的构建规则、依赖关系、编译选项等。</p>
 <p>每个 CMake 项目通常都有一个或多个 CMakeLists.txt 文件。</p>
-<h3 id="single">single</h3>
-<h3 id="multi-file">multi- file</h3>
+<h3 id="single"><a class="markdownIt-Anchor" href="#single">#</a> single</h3>
+<h3 id="multi-file"><a class="markdownIt-Anchor" href="#multi-file">#</a> multi- file</h3>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">add_library</span>(MyLib STATIC src/a.cpp src/b.cpp)</span><br><span class="line"><span class="keyword">target_include_directories</span>(MyLib PUBLIC <span class="keyword">include</span>)</span><br><span class="line"><span class="keyword">target_compile_definitions</span>(MyLib PRIVATE MYLIB_BUILD=<span class="number">1</span>)</span><br><span class="line"><span class="keyword">target_compile_features</span>(MyLib PUBLIC cxx_std_17)</span><br><span class="line"><span class="keyword">set_target_properties</span>(MyLib PROPERTIES OUTPUT_NAME <span class="string">&quot;mylib&quot;</span>)</span><br><span class="line"><span class="keyword">install</span>(TARGETS MyLib ARCHIVE DESTINATION lib)</span><br></pre></td></tr></table></figure>
 
   </div>
@@ -265,10 +265,10 @@ tadylon = tadylon tech blog</title>
     <div class="item left">
       
 
-  <a href="/Code/CMake/linker/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_9.jpg" title=" CMake Linker ">
+  <a href="/Code/Git/learning/" itemprop="url" rel="prev" data-background-image="&#x2F;img&#x2F;background&#x2F;background_4.png" title=" Git Learning ">
   <span class="type">Previous Post</span>
   <span class="category"><i class="ic i-flag"></i> </span>
-  <h3> CMake Linker </h3>
+  <h3> Git Learning </h3>
   </a>
 
     </div>
@@ -289,7 +289,7 @@ tadylon = tadylon tech blog</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="Contents">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">CMake 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Function"><span class="toc-number">1.1.</span> <span class="toc-text">Function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cmake-minimum-required"><span class="toc-number">1.1.1.</span> <span class="toc-text">cmake_minimum_required()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#project"><span class="toc-number">1.1.2.</span> <span class="toc-text">project()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add-executable"><span class="toc-number">1.1.3.</span> <span class="toc-text">add_executable()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add-library"><span class="toc-number">1.1.4.</span> <span class="toc-text">add_library()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add-subdirectory"><span class="toc-number">1.1.5.</span> <span class="toc-text">add_subdirectory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target-link-libraries"><span class="toc-number">1.1.6.</span> <span class="toc-text">target_link_libraries()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#include-directories"><span class="toc-number">1.1.7.</span> <span class="toc-text">include_directories()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target-include-directories"><span class="toc-number">1.1.8.</span> <span class="toc-text">target_include_directories()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set"><span class="toc-number">1.1.9.</span> <span class="toc-text">set()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-number">1.1.10.</span> <span class="toc-text">install()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">1.1.11.</span> <span class="toc-text">if()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add-custom-command"><span class="toc-number">1.1.12.</span> <span class="toc-text">add_custom_command</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find-package"><span class="toc-number">1.1.13.</span> <span class="toc-text">find_package()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CMakeLists-txt-%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text">CMakeLists.txt 文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#single"><span class="toc-number">1.2.1.</span> <span class="toc-text">single</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multi-file"><span class="toc-number">1.2.2.</span> <span class="toc-text">multi- file</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#cmake-%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> CMake 基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#function"><span class="toc-number">1.1.</span> <span class="toc-text"> Function</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cmake_minimum_required"><span class="toc-number">1.1.1.</span> <span class="toc-text">  cmake_minimum_required()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#project"><span class="toc-number">1.1.2.</span> <span class="toc-text">  project()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add_executable"><span class="toc-number">1.1.3.</span> <span class="toc-text">  add_executable()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add_library"><span class="toc-number">1.1.4.</span> <span class="toc-text">  add_library()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add_subdirectory"><span class="toc-number">1.1.5.</span> <span class="toc-text">  add_subdirectory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target_link_libraries"><span class="toc-number">1.1.6.</span> <span class="toc-text">  target_link_libraries()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#include_directories"><span class="toc-number">1.1.7.</span> <span class="toc-text">  include_directories()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#target_include_directories"><span class="toc-number">1.1.8.</span> <span class="toc-text">  target_include_directories()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set"><span class="toc-number">1.1.9.</span> <span class="toc-text">  set()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#install"><span class="toc-number">1.1.10.</span> <span class="toc-text">  install()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">1.1.11.</span> <span class="toc-text">  if()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#add_custom_command"><span class="toc-number">1.1.12.</span> <span class="toc-text">  add_custom_command</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find_package"><span class="toc-number">1.1.13.</span> <span class="toc-text">  find_package()</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cmakeliststxt-%E6%96%87%E4%BB%B6"><span class="toc-number">1.2.</span> <span class="toc-text"> CMakeLists.txt 文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#single"><span class="toc-number">1.2.1.</span> <span class="toc-text"> single</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#multi-file"><span class="toc-number">1.2.2.</span> <span class="toc-text"> multi- file</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="Related">
       </div>
@@ -378,52 +378,7 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Code/CMake/Order/" title=" CMake Order "> CMake Order </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Microeconomics/Part4%20Market%20Structure/" title="Untitled">Untitled</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Math/Calculus/Calculus/" title=" Calculus "> Calculus </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Finance/Part6%20Open%20Economy/" title=" Open Economy "> Open Economy </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Finance/Part5%20International%20Capital%20Flows/" title=" International Capital Flows "> International Capital Flows </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Microeconomics/Part7%20Market%20Failure/" title="Untitled">Untitled</a></span>
+    <span><a href="/Economic/Macroeconomics/Part5%20Exchange%20Rate/" title=" Exchange Rate "> Exchange Rate </a></span>
   </li>
 
       
@@ -441,7 +396,25 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Math/Model/Monte-Carlo%20Simulation/" title=" Monte Carlo Simulation "> Monte Carlo Simulation </a></span>
+    <span><a href="/Economic/Microeconomics/Part3%20Producer%20Behaviour/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Code/CMake/Order/" title=" CMake Order "> CMake Order </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Calculus/Divergence/" title=" Divergence Theorem "> Divergence Theorem </a></span>
   </li>
 
       
@@ -459,7 +432,34 @@ tadylon = tadylon tech blog</title>
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Code/CMake/Base/" title=" CMake Base "> CMake Base </a></span>
+    <span><a href="/Economic/Microeconomics/Part5%20Factor%20Markets/" title="Untitled">Untitled</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Financial/knowledge/" title=" Knowledge of Financial "> Knowledge of Financial </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Finance/Part7%20Financial%20Derivatives/" title=" Financial Derivatives "> Financial Derivatives </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Model/Fourier%20Transform/" title=" Fourier Transform "> Fourier Transform </a></span>
   </li>
 
   </ul>
@@ -484,13 +484,13 @@ tadylon = tadylon tech blog</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="Symbols count total">94k words</span>
+    <span title="Symbols count total">91k words</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="Reading time total">1:26</span>
+    <span title="Reading time total">1:23</span>
   </div>
   <div class="powered-by">
     Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
