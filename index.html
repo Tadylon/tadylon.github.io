@@ -96,12 +96,12 @@
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="/img/background/background_1.png"></li>
           <li class="item" data-background-image="/img/background/background_8.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_9.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_10.jpg"></li>
-          <li class="item" data-background-image="/img/background/background_6.png"></li>
           <li class="item" data-background-image="/img/background/background_3.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_10.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_14.jpg"></li>
+          <li class="item" data-background-image="/img/background/background_1.png"></li>
+          <li class="item" data-background-image="/img/background/background_9.jpg"></li>
         </ul>
       </div>
     </header>
@@ -128,7 +128,46 @@
         
 <article class="item">
   <div class="cover">
-    <a href="/Code/CMake/Learning/" itemprop="url" title=" CMake Learning "><img data-src="/img/background/background_6.png"></a>
+    <a href="/Code/CMake/Base/" itemprop="url" title=" CMake Base "><img data-src="/img/background/background_9.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>20k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>18 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/Code/CMake/Base/" itemprop="url" title=" CMake Base "> CMake Base </a></h3>
+    <div class="excerpt">
+        # 1. CMake 概述
+CMake 是一个项目构建工具，并且是跨平台的。关于项目构建我们所熟知的还有 Makefile（通过 make 命令进行项目的构建），大多是 IDE 软件都集成了 make，比如：VS 的 nmake、linux 下的 GNU make、Qt 的 qmake 等，如果自己动手写 makefile，会发现，makefile 通常依赖于当前的编译平台，而且编写 makefile 的工作量比较大，解决依赖关系时也容易出错。
+而 CMake 恰好能解决上述问题， 其允许开发者指定整个工程的编译流程，在根据编译平台，自动生成本地化的 Makefile 和工程文件，最后用户只需...
+    </div>
+    <a href="/Code/CMake/Base/" itemprop="url" title=" CMake Base " class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/Code/CMake/Learning/" itemprop="url" title=" CMake Learning "><img data-src="/img/background/background_11.png"></a>
   </div>
   <div class="info">
     
@@ -173,7 +212,215 @@ CMakeLists.txt 文件使用一系列的 CMake 指令来描述构建过程。常�
         
 <article class="item">
   <div class="cover">
-    <a href="/Code/Git/learning/" itemprop="url" title=" Git Learning "><img data-src="/img/background/background_11.png"></a>
+    <a href="/Code/CMake/Order/" itemprop="url" title=" CMake Order "><img data-src="/img/background/background_1.png"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.2k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/Code/CMake/Order/" itemprop="url" title=" CMake Order "> CMake Order </a></h3>
+    <div class="excerpt">
+        一下是一些常见的终端指令
+1234567891011# 1. 创建并进入构建目录（防止污染源码）mkdir buildcd build# 2. 配置项目 (Configure)# 读取上一级目录的 CMakeLists.txt，生成 Makefile 或 VS 工程文件cmake ..# 3. 执行编译 (Build)# 这一步会调用底层的编译器（如 g++ 或 MSVC）生成 .execmake --build .
+# 指定生成器 (Generator)
+如果你电脑上同时装了 MinGW (g++) 和 Visual Studio，CMake 可能默认选错。你可以手动指定：
+12345#...
+    </div>
+    <a href="/Code/CMake/Order/" itemprop="url" title=" CMake Order " class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/Code/CMake/linker/" itemprop="url" title=" CMake Linker "><img data-src="/img/background/background_13.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.8k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>2 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/Code/CMake/linker/" itemprop="url" title=" CMake Linker "> CMake Linker </a></h3>
+    <div class="excerpt">
+        # 一、基本概念
+# 静态链接
+将库的代码直接编译到最终的可执行文件中，生成一个完整的、独立的程序。
+# 动态链接
+库的代码在运行时才加载到内存中，可执行文件只包含对库的引用。
+# 二、两种链接方式的对比
+
+特性
+静态链接
+动态链接
+
+文件大小
+较大，包含所有库代码
+较小，只有引用
+
+内存占用
+每个程序独立占用
+多个程序可共享
+
+部署难度
+简单，单个文件
+需要确保系统有对应库
+
+更新库
+需要重新编译
+替换库文件即可
+
+启动速度
+较快
+需要加载动态库，稍慢
+
+运行时性能
+可能略好（无间接调用）
+有轻微开销
+
+# 三、CMake 中的配置方法
+# 创建库
+1234567891011#...
+    </div>
+    <a href="/Code/CMake/linker/" itemprop="url" title=" CMake Linker " class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/Math/Calculus/Calculus/" itemprop="url" title=" Calculus "><img data-src="/img/background/background_5.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>230</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/Math/Calculus/Calculus/" itemprop="url" title=" Calculus "> Calculus </a></h3>
+    <div class="excerpt">
+        # Calculus
+微积分基本定理
+若 fff 在 [a,b][a,b][a,b] 上连续，定义
+F(x)=∫axf(t) dtF(x) = &#92;int_a^x f(t)&#92;,dt
+F(x)=∫ax​f(t)dt
+则 FFF 可导，且
+F′(x)=f(x)F^′(x) = f(x)
+F′(x)=f(x)
+若 F′(x)=f(x)F^′(x) = f(x)F′(x)=f(x)，则
+∫abf(x) dx=F(b)−F(a)&#92;int_a^b f(x)&#92;,dx = F(b) − F(a)
+∫ab​f(x)dx=F(b)−F(a)
+    </div>
+    <a href="/Math/Calculus/Calculus/" itemprop="url" title=" Calculus " class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/Math/Calculus/Divergence/" itemprop="url" title=" Divergence Theorem "><img data-src="/img/background/background_2.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/Math/Calculus/Divergence/" itemprop="url" title=" Divergence Theorem "> Divergence Theorem </a></h3>
+    <div class="excerpt">
+        # Conception
+散度定理的公式是：
+∭V∇⋅F dV=∬∂VF⋅n dS&#92;iiint_V &#92;nabla&#92;cdot&#92;mathbf F&#92;,dV = &#92;iint_{&#92;partial V}&#92;mathbf F&#92;cdot&#92;mathbf n&#92;,dS
+∭V​∇⋅FdV=∬∂V​F⋅ndS
+这里：
+
+VVV：三维空间中的一个体积区域
+∂V&#92;partial V∂V：这个区域的边界曲面
+F&#92;mathbf FF：一个向量场
+n&#92;mathbf...
+    </div>
+    <a href="/Math/Calculus/Divergence/" itemprop="url" title=" Divergence Theorem " class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/Code/Git/learning/" itemprop="url" title=" Git Learning "><img data-src="/img/background/background_6.png"></a>
   </div>
   <div class="info">
     
@@ -224,291 +471,7 @@ git config --global user.email...
         
 <article class="item">
   <div class="cover">
-    <a href="/Code/CMake/Base/" itemprop="url" title=" CMake Base "><img data-src="/img/background/background_6.png"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2026-10-10 23:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>20k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>18 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/Code/CMake/Base/" itemprop="url" title=" CMake Base "> CMake Base </a></h3>
-    <div class="excerpt">
-        # 1. CMake 概述
-CMake 是一个项目构建工具，并且是跨平台的。关于项目构建我们所熟知的还有 Makefile（通过 make 命令进行项目的构建），大多是 IDE 软件都集成了 make，比如：VS 的 nmake、linux 下的 GNU make、Qt 的 qmake 等，如果自己动手写 makefile，会发现，makefile 通常依赖于当前的编译平台，而且编写 makefile 的工作量比较大，解决依赖关系时也容易出错。
-而 CMake 恰好能解决上述问题， 其允许开发者指定整个工程的编译流程，在根据编译平台，自动生成本地化的 Makefile 和工程文件，最后用户只需...
-    </div>
-    <a href="/Code/CMake/Base/" itemprop="url" title=" CMake Base " class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/Economic/Macroeconomics/Part2%20Models/" itemprop="url" title=" Models "><img data-src="/img/background/background_6.png"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2026-10-10 23:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>11k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>10 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/Economic/Macroeconomics/Part2%20Models/" itemprop="url" title=" Models "> Models </a></h3>
-    <div class="excerpt">
-        # Three Models
-可以理解为：
-&#92;text{(NI−AE)} &#92;rightarrow &#92;text{(IS−LM)} &#92;rightarrow &#92;text{(AS−AD)}$$​
-这是宏观经济学从**简单到复杂**的分析路线。
-
-## NI-AE
-收入-支出模型
-短期产品市场均衡
-
-$&#92;text{NI}$ 国民收入
-$$&#92;text{National Income}
-AE&#92;text{AE}AE 总支出
-Aggregate Expenditure&#92;text{Aggregate...
-    </div>
-    <a href="/Economic/Macroeconomics/Part2%20Models/" itemprop="url" title=" Models " class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/Economic/Macroeconomics/Part5%20Exchange%20Rate/" itemprop="url" title=" Exchange Rate "><img data-src="/img/background/background_7.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2026-10-10 23:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>3.5k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>3 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/Economic/Macroeconomics/Part5%20Exchange%20Rate/" itemprop="url" title=" Exchange Rate "> Exchange Rate </a></h3>
-    <div class="excerpt">
-        # Exchange Rate
-汇率
-# Definition
-# Nominal Exchange Rate
-enom,Enome_{nom},E_{nom}
-enom​,Enom​
-在我们日常语境中，汇率指的是名义汇率（Nominal Exchange Rate），即两种货币之间的兑换比率。
-定义：用一国货币表示的另一国货币的 “价格”。
-标价方式（必须分清，否则公式会算反）：
-Direct pricing method
-
-直接标价法（美式 / 应付标价法）：1 单位外币 = 多少本币。
-
-&#92;begin{align}
-1 &#92;text{ unit of Foregin...
-    </div>
-    <a href="/Economic/Macroeconomics/Part5%20Exchange%20Rate/" itemprop="url" title=" Exchange Rate " class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/Economic/Macroeconomics/Part7%20Unemployment%20&%20Inflation/" itemprop="url" title=" Unemployment and Inflation "><img data-src="/img/background/background_7.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2026-10-10 23:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>29</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>1 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/Economic/Macroeconomics/Part7%20Unemployment%20&%20Inflation/" itemprop="url" title=" Unemployment and Inflation "> Unemployment and Inflation </a></h3>
-    <div class="excerpt">
-        # Unemployment
-失业
-# Inflation
-通货膨胀
-    </div>
-    <a href="/Economic/Macroeconomics/Part7%20Unemployment%20&%20Inflation/" itemprop="url" title=" Unemployment and Inflation " class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" itemprop="url" title=" Fiscal and Monetary Policy "><img data-src="/img/background/background_15.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2026-10-10 23:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>4.3k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>4 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" itemprop="url" title=" Fiscal and Monetary Policy "> Fiscal and Monetary Policy </a></h3>
-    <div class="excerpt">
-        财政政策与货币政策
-# Fiscal Policy
-# Concept
-财政政策：政府通过税收和财政支出的变化，影响社会有效需求，促进充分就业，稳定物价水平 &#92;text
-特征：
-
-直接性：由国家直接掌握和控制，直接干预和调节社会经济活动
-强制性：一般通过立法形式，具有法律效力
-
-目标：
-
-经济稳定目标：稳定物价水平，充分就业，国际收支平衡
-经济发展目标：经济稳定增长，资源合理配置，反经济周期波动
-公平收入分配目标
-
-# Classification
-根据调节经济周期的作用：
-
-相机抉择的财政政策：需要借助某种哇哇 i...
-    </div>
-    <a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" itemprop="url" title=" Fiscal and Monetary Policy " class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" itemprop="url" title=" National Income Accounts "><img data-src="/img/background/background_14.jpg"></a>
-  </div>
-  <div class="info">
-    
-<div class="meta">
-  <span class="item" title="Created: 2026-10-10 23:00:00">
-    <span class="icon">
-      <i class="ic i-calendar"></i>
-    </span>
-    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
-  </span>
-  <span class="item" title="Symbols count in article">
-    <span class="icon">
-      <i class="ic i-pen"></i>
-    </span>
-    <span>5.9k</span>
-    <span class="text">words</span>
-  </span>
-  <span class="item" title="Reading time">
-    <span class="icon">
-      <i class="ic i-clock"></i>
-    </span>
-    <span>5 mins.</span>
-  </span>
-</div>
-
-    <h3><a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" itemprop="url" title=" National Income Accounts "> National Income Accounts </a></h3>
-    <div class="excerpt">
-        # GDP
-Gross Domestic Product
-
-生产法：所有生产者增加值（产出 - 投入）之和
-收入法：所有收入之和，包括工人的工资和企业为主的利润
-支出法：最终购买者的支出之和
-
-这三种核算方法必然给出相同的答案
-GDP 同时衡量着经济中所有人的总支出和总收入。因为对于一个整体经济来说，收入必定等于支出。
-GDP 是既定时期内，一国领土上最终产品（包括物品和服务）的当期市场价值。
-国内生产总值是在一个既定时期一个国家内生产的所有最终物品和服务的市场价值。
-# GDP link
-# GNP
-Gross National...
-    </div>
-    <a href="/Economic/Macroeconomics/Part1%20National%20Income%20Accounts/" itemprop="url" title=" National Income Accounts " class="btn">more...</a>
-  </div>
-</article>
-
-        
-<article class="item">
-  <div class="cover">
-    <a href="/Economic/Macroeconomics/Part3%20Microeconomics/" itemprop="url" title=" Macroeconomics "><img data-src="/img/background/background_11.png"></a>
+    <a href="/Math/Probability/Base/" itemprop="url" title=" Probability Basics "><img data-src="/img/background/background_9.jpg"></a>
   </div>
   <div class="info">
     
@@ -534,26 +497,28 @@ Gross National...
   </span>
 </div>
 
-    <h3><a href="/Economic/Macroeconomics/Part3%20Microeconomics/" itemprop="url" title=" Macroeconomics "> Macroeconomics </a></h3>
+    <h3><a href="/Math/Probability/Base/" itemprop="url" title=" Probability Basics "> Probability Basics </a></h3>
     <div class="excerpt">
-        # Four Consumption Functions
-# Keynes’s Theory of Absolute Income
-凯恩斯绝对收入理论
-社会实际收入变动时，消费同向变动，但是幅度较小
-消费与收入的比率（平均消费倾向）随收入增加而减小
-收入是消费的主要决定因素，利率不重要
-&#92;begin{align}
-C &amp;= &#92;bar{C} + &#92;text{MPC} &#92;cdot &#92;text{DPI} &#92;&#92;
-S &amp;= &#92;bar{S} + &#92;text{MPS} &#92;cdot...
+        # CDF
+分布函数
+全称：Cumulative Distribution Function
+分布函数是概率论中的 “万能工具”，无论是离散型还是连续型随机变量，都可以用它来完全描述。
+
+定义：设 XXX 是一个随机变量，对于任意实数 xxx，分布函数定义为随机变量 XXX 落在区间 (−∞,x](-&#92;infty, x](−∞,x] 内的概率：
+
+F(x)=P(X≤x)F(x) = P(X &#92;le x)
+F(x)=P(X≤x)
+
+直观理解：它是一个 “累积器”。你拿着一个袋子从数轴的左边 −∞-&#92;infty−∞ 一路向右走，走到 xxx...
     </div>
-    <a href="/Economic/Macroeconomics/Part3%20Microeconomics/" itemprop="url" title=" Macroeconomics " class="btn">more...</a>
+    <a href="/Math/Probability/Base/" itemprop="url" title=" Probability Basics " class="btn">more...</a>
   </div>
 </article>
 
         
 <article class="item">
   <div class="cover">
-    <a href="/Economic/Macroeconomics/Part6%20Economics%20Growth/" itemprop="url" title=" Economic Growth "><img data-src="/img/background/background_6.png"></a>
+    <a href="/Math/Probability/Probability/" itemprop="url" title=" Probability Overview "><img data-src="/img/background/background_15.jpg"></a>
   </div>
   <div class="info">
     
@@ -568,35 +533,88 @@ S &amp;= &#92;bar{S} + &#92;text{MPS} &#92;cdot...
     <span class="icon">
       <i class="ic i-pen"></i>
     </span>
-    <span>4.7k</span>
+    <span>940</span>
     <span class="text">words</span>
   </span>
   <span class="item" title="Reading time">
     <span class="icon">
       <i class="ic i-clock"></i>
     </span>
-    <span>4 mins.</span>
+    <span>1 mins.</span>
   </span>
 </div>
 
-    <h3><a href="/Economic/Macroeconomics/Part6%20Economics%20Growth/" itemprop="url" title=" Economic Growth "> Economic Growth </a></h3>
+    <h3><a href="/Math/Probability/Probability/" itemprop="url" title=" Probability Overview "> Probability Overview </a></h3>
     <div class="excerpt">
-        # Economics Growth
-经济增长
-# The Harold-Doma Model
-哈罗德 - 多马模型
-# Basic Assumption
-基本假设
-储蓄率不变
-SY=s&#92;frac{S}{Y} = s
-YS​=s
-资本存量增长不变
-KY=v&#92;frac{K}{Y} = v
-YK​=v
-封闭经济，不存在政府干预，
-Working capital+Fixed capital=K=1&#92;text{Working capital} + &#92;text{Fixed capital} = K =...
+        # Discrete Random Variable
+离散概率模型
+概率质量函数，几何分布，二项分布，数学期望，方差 Discrete Random Variables I
+伯努利分布，泊松分布，随机变量的变换，联合分布 Discrete Random Variables II
+条件概率，条件概率期望，独立性 Discrete Random Variables III
+# Generalized Random Variable
+一般概率模型
+连续概率模型，概率密度函数，期望和方差，指数分布，累计分布函数 Generalized Random Variables...
     </div>
-    <a href="/Economic/Macroeconomics/Part6%20Economics%20Growth/" itemprop="url" title=" Economic Growth " class="btn">more...</a>
+    <a href="/Math/Probability/Probability/" itemprop="url" title=" Probability Overview " class="btn">more...</a>
+  </div>
+</article>
+
+        
+<article class="item">
+  <div class="cover">
+    <a href="/Economic/Finance/Part1%20Financial%20Markets/" itemprop="url" title=" Financial Markets "><img data-src="/img/background/background_14.jpg"></a>
+  </div>
+  <div class="info">
+    
+<div class="meta">
+  <span class="item" title="Created: 2026-10-10 23:00:00">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <time itemprop="dateCreated datePublished" datetime="2026-10-10T23:00:00+08:00">2026-10-10</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span>1.9k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span>2 mins.</span>
+  </span>
+</div>
+
+    <h3><a href="/Economic/Finance/Part1%20Financial%20Markets/" itemprop="url" title=" Financial Markets "> Financial Markets </a></h3>
+    <div class="excerpt">
+        # Definition
+# Categories
+# By Estate Agent
+按中介特征：
+
+直接金融市场：资金供求双方直接进行融资
+简介金融市场：通过银行等金融机构
+
+# By Transaction Term
+按照交易期限：
+资本市场（长期资金市场）
+期限一年以上的金融商品交易市场
+
+包括债券，股票等有价证券，银行中长借贷市场
+
+货币市场（短期资金市场）
+期限一年以内的金融商品交易市场
+
+包括同业拆借，票据，国库券，回购协议，大额存单等市场
+
+融资期限短，流动性强，风险性小，可控性强，
+作用：参与者调剂资金余缺，补充流动性，实施货币政策和财政政策
+# By Trading...
+    </div>
+    <a href="/Economic/Finance/Part1%20Financial%20Markets/" itemprop="url" title=" Financial Markets " class="btn">more...</a>
   </div>
 </article>
 
@@ -709,7 +727,7 @@ Working capital+Fixed capital=K=1&#92;text{Working capital} + &#92;text{Fixed 
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Code/CMake/Base/" title=" CMake Base "> CMake Base </a></span>
+    <span><a href="/Economic/Finance/Part2%20Commercial%20Banks/" title=" Commercial Banks "> Commercial Banks </a></span>
   </li>
 
       
@@ -718,7 +736,7 @@ Working capital+Fixed capital=K=1&#92;text{Working capital} + &#92;text{Fixed 
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Microeconomics/Part2%20Consumer%20Behaviour/" title="Untitled">Untitled</a></span>
+    <span><a href="/Math/Calculus/Divergence/" title=" Divergence Theorem "> Divergence Theorem </a></span>
   </li>
 
       
@@ -736,7 +754,7 @@ Working capital+Fixed capital=K=1&#92;text{Working capital} + &#92;text{Fixed 
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Code/CMake/Learning/" title=" CMake Learning "> CMake Learning </a></span>
+    <span><a href="/Financial/knowledge/" title=" Knowledge of Financial "> Knowledge of Financial </a></span>
   </li>
 
       
@@ -745,7 +763,25 @@ Working capital+Fixed capital=K=1&#92;text{Working capital} + &#92;text{Fixed 
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Microeconomics/Part1%20Equilibrium%20Price/" title="Untitled">Untitled</a></span>
+    <span><a href="/Economic/Macroeconomics/Part7%20Unemployment%20&%20Inflation/" title=" Unemployment and Inflation "> Unemployment and Inflation </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Math/Model/Monte-Carlo%20Simulation/" title=" Monte Carlo Simulation "> Monte Carlo Simulation </a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/Economic/Macroeconomics/Part4%20Fiscal%20&%20Monetary/" title=" Fiscal and Monetary Policy "> Fiscal and Monetary Policy </a></span>
   </li>
 
       
@@ -763,7 +799,7 @@ Working capital+Fixed capital=K=1&#92;text{Working capital} + &#92;text{Fixed 
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Economic/Microeconomics/Part3%20Producer%20Behaviour/" title="Untitled">Untitled</a></span>
+    <span><a href="/Economic/Microeconomics/Part2%20Consumer%20Behaviour/" title="Untitled">Untitled</a></span>
   </li>
 
       
@@ -772,25 +808,7 @@ Working capital+Fixed capital=K=1&#92;text{Working capital} + &#92;text{Fixed 
 <div class="breadcrumb">
 </div>
 
-    <span><a href="/Math/Model/Shannon%20Entropy/" title=" Shannon Entropy "> Shannon Entropy </a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Microeconomics/Part5%20Factor%20Markets/" title="Untitled">Untitled</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-</div>
-
-    <span><a href="/Economic/Macroeconomics/Part2%20Models/" title=" Models "> Models </a></span>
+    <span><a href="/Code/CMake/Base/" title=" CMake Base "> CMake Base </a></span>
   </li>
 
   </ul>
